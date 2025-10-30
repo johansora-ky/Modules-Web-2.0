@@ -1,0 +1,451 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+
+
+@layer base {
+
+  /* Added custom animations for hero section */
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes float-delayed {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+
+  @keyframes bounce-slow {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float-delayed 5s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce-slow 3s ease-in-out infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 1s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1.5s ease-out;
+  }
+}
+
+/* ===== Banner (CSS puro) - _banner_autowritting ===== */
+@keyframes pulse_banner_autowritting {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+}
+
+#hero_banner_autowritting {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(to bottom, rgba(0, 82, 255, 0.05), #ffffff, #ffffff);
+}
+
+#container_banner_autowritting {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 1024px) {
+  #container_banner_autowritting {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+#grid_banner_autowritting {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  #grid_banner_autowritting {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+#left_banner_autowritting {
+  animation: fade-in-up 1s ease-out;
+}
+
+#left_banner_autowritting>*+* {
+  margin-top: 2rem;
+}
+
+#title_banner_autowritting {
+  font-weight: 700;
+  color: #0052FF;
+  line-height: 1.25;
+  text-wrap: balance;
+  font-size: 3rem;
+}
+
+@media (min-width: 768px) {
+  #title_banner_autowritting {
+    font-size: 3.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  #title_banner_autowritting {
+    font-size: 4.5rem;
+  }
+}
+
+#subtitle_wrap_banner_autowritting {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+#subtitle_text_banner_autowritting {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  #subtitle_text_banner_autowritting {
+    font-size: 1.875rem;
+  }
+}
+
+#subtitle_cursor_banner_autowritting {
+  color: #E60026;
+  animation: pulse_banner_autowritting 1.2s ease-in-out infinite;
+}
+
+#secondary_phrase_banner_autowritting {
+  font-weight: 500;
+  color: #4b5563;
+  font-size: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  #secondary_phrase_banner_autowritting {
+    font-size: 1.5rem;
+  }
+}
+
+#cta_wrap_banner_autowritting {
+  padding-top: 1rem;
+}
+
+#cta_button_banner_autowritting {
+  background-color: #E60026;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.125rem;
+  padding: 1.75rem 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: transform 300ms ease, box-shadow 300ms ease, background-color 200ms ease;
+}
+
+#cta_button_banner_autowritting:hover {
+  background-color: rgba(230, 0, 38, 0.9);
+  transform: scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+#trust_banner_autowritting {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-top: 2rem;
+}
+
+.trust_item_banner_autowritting {
+  /* class -> usar !important */
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+}
+
+#icon_circle_banner_autowritting {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  background: rgba(0, 82, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#icon_circle_banner_autowritting svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #0052FF;
+}
+
+.trust_title_banner_autowritting {
+  /* class -> usar !important */
+  font-weight: 600 !important;
+  color: #111827 !important;
+}
+
+.trust_subtitle_banner_autowritting {
+  /* class -> usar !important */
+  font-size: 0.875rem !important;
+  color: #4b5563 !important;
+}
+
+#right_banner_autowritting {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fade-in 1.5s ease-out;
+}
+
+@media (min-width: 1024px) {
+  #right_banner_autowritting {
+    height: 600px;
+  }
+}
+
+#right_banner_autowritting img {
+  max-width: 70%;
+  height: auto;
+  display: block;
+}
+
+/* Celular - animación fade-in */
+@keyframes phone_fade_in_banner_autowritting {
+
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#img_phone_banner_autowritting {
+  animation: phone_fade_in_banner_autowritting 0.9s ease-out 0s 1 both;
+  transform-origin: 50% 50%;
+}
+
+@media (max-width: 767px) {
+  #img_phone_banner_autowritting {
+    max-width: 84vw;
+    min-width: 160px;
+  }
+}
+
+/* ===== Responsive tweaks - _banner_autowritting ===== */
+@media (max-width: 639px) {
+  #hero_banner_autowritting {
+    min-height: auto;
+  }
+
+  #container_banner_autowritting {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  #grid_banner_autowritting {
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #left_banner_autowritting {
+    text-align: center;
+  }
+
+  #title_banner_autowritting {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  #subtitle_text_banner_autowritting {
+    font-size: 1.25rem;
+  }
+
+  #subtitle_wrap_banner_autowritting {
+    justify-content: center;
+  }
+
+  #secondary_phrase_banner_autowritting {
+    font-size: 1rem;
+  }
+
+  #cta_wrap_banner_autowritting {
+    padding-top: 0.75rem;
+  }
+
+  #cta_button_banner_autowritting {
+    width: 100%;
+    font-size: 1rem;
+    padding: 1.25rem 2rem;
+    border-radius: 0.875rem;
+  }
+
+  #trust_banner_autowritting {
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  #icon_circle_banner_autowritting {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  #icon_circle_banner_autowritting svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .trust_title_banner_autowritting {
+    font-size: 0.95rem !important;
+  }
+
+  .trust_subtitle_banner_autowritting {
+    font-size: 0.8rem !important;
+  }
+
+  #right_banner_autowritting {
+    order: -1;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  #right_banner_autowritting img {
+    max-width: 55vw;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  #subtitle_wrap_banner_autowritting {
+    justify-content: center;
+  }
+
+  #grid_banner_autowritting {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #right_banner_autowritting {
+    order: -1;
+    margin-bottom: 1.25rem;
+  }
+
+  #right_banner_autowritting img {
+    max-width: 56vw;
+  }
+
+  #title_banner_autowritting {
+    font-size: 2.5rem;
+  }
+
+  #subtitle_text_banner_autowritting {
+    font-size: 1.375rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  #container_banner_autowritting {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  #grid_banner_autowritting {
+    gap: 2.5rem;
+  }
+
+  #title_banner_autowritting {
+    font-size: 3.25rem;
+  }
+
+  #subtitle_text_banner_autowritting {
+    font-size: 1.75rem;
+  }
+
+  #cta_button_banner_autowritting {
+    padding: 1.5rem 2.25rem;
+  }
+
+  #right_banner_autowritting img {
+    max-width: 63%;
+  }
+}
