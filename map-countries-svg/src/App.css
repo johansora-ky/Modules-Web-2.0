@@ -1,0 +1,10 @@
+/* Custom marker animations */
+.marker-group:hover circle:nth-child(2) {
+  transform: scale(1.25);
+  transition: transform 0.3s ease;
+}
+
+/* Smooth transitions for map changes */
+.map-transition {
+  transition: all 0.5s ease-in-out;
+}
