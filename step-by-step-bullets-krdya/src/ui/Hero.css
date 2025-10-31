@@ -1,0 +1,309 @@
+/* Hero Section Styles */
+#section_step_by_step_bullets_krdya {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(to bottom right, transparent, transparent);
+  width: auto;
+}
+
+#container_step_by_step_bullets_krdya {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
+  position: relative;
+  z-index: 10;
+}
+
+#max_wrapper_step_by_step_bullets_krdya {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#max_wrapper_step_by_step_bullets_krdya > * + * {
+  margin-top: 4rem;
+}
+
+#header_wrapper_step_by_step_bullets_krdya > * + * {
+  margin-top: 1.5rem;
+}
+
+#title_step_by_step_bullets_krdya {
+  font-size: 3rem;
+  font-weight: 700;
+  text-wrap: balance;
+  background: linear-gradient(to right, #18a7ff, #004ebc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.25;
+}
+
+#subtitle_step_by_step_bullets_krdya {
+  font-size: 1.25rem;
+  color: #4b5563;
+  margin-left: auto;
+  margin-right: auto;
+  text-wrap: pretty;
+}
+
+@media (min-width: 768px) {
+  #title_step_by_step_bullets_krdya {
+    font-size: 4.5rem;
+  }
+
+  #subtitle_step_by_step_bullets_krdya {
+    font-size: 1.5rem;
+  }
+}
+
+/* Timeline Container */
+#timeline_container_step_by_step_bullets_krdya {
+  position: relative;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Horizontal Timeline (Desktop) */
+#timeline_horizontal_step_by_step_bullets_krdya {
+  display: none;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 0.25rem;
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+}
+
+@media (min-width: 768px) {
+  #timeline_horizontal_step_by_step_bullets_krdya {
+    display: block;
+  }
+}
+
+#timeline_progress_horizontal_step_by_step_bullets_krdya {
+  height: 100%;
+  background: linear-gradient(to right, #e10623, rgba(225, 6, 35, 0.6));
+  border-radius: 9999px;
+  transition: all 1000ms ease-in-out;
+  position: relative;
+}
+
+#timeline_glow_horizontal_step_by_step_bullets_krdya {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  background-color: white;
+  border-radius: 9999px;
+  box-shadow: 0 10px 15px -3px rgba(225, 6, 35, 0.5),
+    0 4px 6px -2px rgba(225, 6, 35, 0.5);
+  animation: pulse_step_by_step_bullets_krdya 2s cubic-bezier(0.4, 0, 0.6, 1)
+    infinite;
+}
+
+/* Vertical Timeline (Mobile) */
+#timeline_vertical_step_by_step_bullets_krdya {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  height: 100%;
+  width: 0.25rem;
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+}
+
+@media (min-width: 768px) {
+  #timeline_vertical_step_by_step_bullets_krdya {
+    display: none;
+  }
+}
+
+#timeline_progress_vertical_step_by_step_bullets_krdya {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to bottom, #e10623, rgba(225, 6, 35, 0.6));
+  border-radius: 9999px;
+  transition: all 1000ms ease-in-out;
+}
+
+#timeline_glow_vertical_step_by_step_bullets_krdya {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 1rem;
+  height: 1rem;
+  background-color: white;
+  border-radius: 9999px;
+  box-shadow: 0 10px 15px -3px rgba(225, 6, 35, 0.5),
+    0 4px 6px -2px rgba(225, 6, 35, 0.5);
+  animation: pulse_step_by_step_bullets_krdya 2s cubic-bezier(0.4, 0, 0.6, 1)
+    infinite;
+}
+
+/* Steps Container */
+#steps_container_step_by_step_bullets_krdya {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  #steps_container_step_by_step_bullets_krdya {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+  }
+}
+
+.step_item_step_by_step_bullets_krdya {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  z-index: 10;
+}
+
+/* Icon Circle */
+.icon_circle_step_by_step_bullets_krdya {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 500ms ease-in-out;
+  background-color: white;
+  border: 2px solid #e5e7eb;
+}
+
+@media (min-width: 768px) {
+  .icon_circle_step_by_step_bullets_krdya {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+
+.icon_circle_active_step_by_step_bullets_krdya {
+  background: linear-gradient(to bottom right, #004ebc, #5b9aeb);
+  box-shadow: 0 20px 25px -5px rgba(0, 78, 188, 0.3),
+    0 10px 10px -5px rgba(0, 78, 188, 0.3);
+  transform: scale(1.1);
+}
+
+.icon_step_by_step_bullets_krdya {
+  width: 2.5rem;
+  height: 2.5rem;
+  transition: color 500ms ease-in-out;
+  color: #9ca3af;
+}
+
+@media (min-width: 768px) {
+  .icon_step_by_step_bullets_krdya {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.icon_active_step_by_step_bullets_krdya {
+  color: white;
+}
+
+.icon_ping_step_by_step_bullets_krdya {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: linear-gradient(to bottom right, #004ebc, #5b9aeb);
+  animation: ping_step_by_step_bullets_krdya 2s cubic-bezier(0, 0, 0.2, 1)
+    infinite;
+  opacity: 0.2;
+}
+
+/* Step Text */
+.step_text_step_by_step_bullets_krdya {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  transition: all 500ms ease-in-out;
+  white-space: nowrap;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid;
+  backdrop-filter: blur(4px);
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #374151;
+  border-color: #e5e7eb;
+}
+
+.step_text_active_step_by_step_bullets_krdya {
+  color: #111827;
+  border-color: rgba(0, 78, 188, 0.3);
+  box-shadow: 0 1px 2px 0 rgba(0, 78, 188, 0.1);
+}
+
+.step_text_inactive_step_by_step_bullets_krdya {
+  color: #374151;
+  border-color: #e5e7eb;
+}
+
+@media (min-width: 768px) {
+  .step_text_step_by_step_bullets_krdya {
+    font-size: 1.125rem;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    backdrop-filter: none;
+    background-color: transparent;
+  }
+
+  .step_text_active_step_by_step_bullets_krdya {
+    color: #111827;
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  .step_text_inactive_step_by_step_bullets_krdya {
+    color: #9ca3af;
+  }
+}
+
+/* Animations */
+@keyframes pulse_step_by_step_bullets_krdya {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes ping_step_by_step_bullets_krdya {
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
