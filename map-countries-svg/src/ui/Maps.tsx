@@ -8,6 +8,7 @@ import {
   Marker,
 } from "react-simple-maps";
 import { X } from "lucide-react";
+import "../styles/map-countries-svg.css";
 
 interface Location {
   name: string;
@@ -25,42 +26,43 @@ const locations: Location[] = [
     description:
       "Economía emergente con fuerte sector tecnológico y financiero en expansión.",
     imageUrl: "/bogota-colombia-skyline.jpg",
-    flag: "🇨🇴",
+    flag: "https://flagcdn.com/48x36/co.png",
   },
   {
     name: "Estados Unidos",
     coordinates: [-95.7129, 37.0902],
     description:
       "La economía más grande del mundo con un sector financiero altamente desarrollado.",
-    flag: "🇺🇸",
+    flag: "https://flagcdn.com/48x36/us.png",
   },
   {
     name: "Nicaragua",
     coordinates: [-85.2072, 12.8654],
     description:
       "Mercado en crecimiento con oportunidades en servicios financieros.",
-    flag: "🇳🇮",
+    flag: "https://flagcdn.com/48x36/ni.png",
   },
   {
     name: "Panamá",
     coordinates: [-80.7821, 8.538],
     description:
       "Centro financiero internacional y hub logístico de las Américas.",
-    flag: "🇵🇦",
+    imageUrl: "https://www.krediya.com.pa/hs-fs/hubfs/Remesa_panama_R.DOM_Tabla_POPUP_horz-1.png?width=1920&name=Remesa_panama_R.DOM_Tabla_POPUP_horz-1.png",
+    flag: "https://flagcdn.com/48x36/pa.png",
   },
   {
     name: "Costa Rica",
     coordinates: [-84.0907, 9.7489],
     description:
       "Economía estable con alto desarrollo en tecnología y servicios.",
-    flag: "🇨🇷",
+    flag: "https://flagcdn.com/48x36/cr.png",
   },
   {
     name: "China",
     coordinates: [104.1954, 35.8617],
     description:
       "Potencia económica global con rápida innovación en tecnología financiera.",
-    flag: "🇨🇳",
+    flag: "https://flagcdn.com/48x36/cn.png",
   },
 ];
 
@@ -77,34 +79,65 @@ const highlightedCountries = [
   "Costa Rica",
 ];
 
-export default function InteractiveMaps() {
+interface InteractiveMapsProps {
+  hideHeader?: boolean;
+}
+
+export default function InteractiveMaps({ hideHeader = false }: InteractiveMapsProps) {
   const [selectedLocation, setSelectedLocation] = useState<Location | null>(
     null
   );
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 py-12">
+    <div id="container_map-countries-svg" className={hideHeader ? "hide-header" : "show-header"}>
       {/* Header */}
-      <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Nuestra Presencia Global
-        </h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Descubre nuestras operaciones en mercados clave alrededor del mundo
-        </p>
-      </div>
+      {!hideHeader && (
+        <div id="header_map-countries-svg">
+          <h1 id="header-title_map-countries-svg">
+            Nuestra Presencia Global
+          </h1>
+          <p id="header-description_map-countries-svg">
+            Descubre nuestras operaciones en mercados clave alrededor del mundo
+          </p>
+        </div>
+      )}
 
       {/* Map Container */}
-      <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8">
-        <div className="relative w-full" style={{ height: "80dvh" }}>
+      <div id="map-container_map-countries-svg">
+        <div id="map-wrapper_map-countries-svg">
           <ComposableMap
             projection="geoMercator"
             projectionConfig={{
               center: [-95, 20],
-              scale: 800,
+              scale: 700,
             }}
-            className="w-full h-full"
+            id="map_composable_map-countries-svg"
           >
+            <defs>
+              <linearGradient id="countryGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#60a5fa" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="#004ebc" stopOpacity="0.8" />
+              </linearGradient>
+              <linearGradient id="countryGradientHover" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#60a5fa" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="#004ebc" stopOpacity="1" />
+              </linearGradient>
+              <radialGradient id="markerGradient" cx="50%" cy="50%">
+                <stop offset="0%" stopColor="#ff6b6b" />
+                <stop offset="100%" stopColor="#e60026" />
+              </radialGradient>
+              <filter id="markerShadow">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="2" />
+                <feOffset dx="0" dy="2" result="offsetblur" />
+                <feComponentTransfer>
+                  <feFuncA type="linear" slope="0.3" />
+                </feComponentTransfer>
+                <feMerge>
+                  <feMergeNode />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
             <Geographies geography={geoUrl}>
               {({ geographies }) => {
                 // Console log para ver los nombres de los países en consola
@@ -115,26 +148,40 @@ export default function InteractiveMaps() {
                     geo.properties.name
                   );
 
-                  return (
+                  const geographyContent = (
                     <Geography
                       key={geo.rsmKey}
                       geography={geo}
-                      fill={isHighlighted ? "#004ebc" : "#D1D5DB"}
-                      fillOpacity={isHighlighted ? 0.4 : 0.5}
+                      fill={isHighlighted ? "url(#countryGradient)" : "#D1D5DB"}
+                      fillOpacity={isHighlighted ? 1 : 0.5}
                       stroke={isHighlighted ? "#004ebc" : "#9CA3AF"}
                       strokeWidth={isHighlighted ? 1.5 : 0.5}
-                      strokeOpacity={isHighlighted ? 0.6 : 0.4}
+                      strokeOpacity={isHighlighted ? 0.8 : 0.4}
                       style={{
                         default: { outline: "none" },
                         hover: {
                           outline: "none",
-                          fill: isHighlighted ? "#004ebc" : "#D1D5DB",
-                          fillOpacity: isHighlighted ? 0.6 : 0.6,
+                          fill: isHighlighted ? "url(#countryGradientHover)" : "#D1D5DB",
+                          fillOpacity: isHighlighted ? 1 : 0.6,
                         },
                         pressed: { outline: "none" },
                       }}
                     />
                   );
+
+                  if (isHighlighted) {
+                    return (
+                      <g
+                        key={geo.rsmKey}
+                        className="country-hover-scale_map-countries-svg"
+                        style={{ transformOrigin: "center" }}
+                      >
+                        {geographyContent}
+                      </g>
+                    );
+                  }
+
+                  return geographyContent;
                 });
               }}
             </Geographies>
@@ -142,24 +189,51 @@ export default function InteractiveMaps() {
               <Marker key={location.name} coordinates={location.coordinates}>
                 <g
                   onClick={() => setSelectedLocation(location)}
-                  className="cursor-pointer"
-                  style={{ transformOrigin: "center" }}
+                  className="cursor-pointer_map-countries-svg marker-group_map-countries-svg"
+                  style={{ transformOrigin: "center bottom" }}
                 >
+                  {/* Static outer glow */}
                   <circle
-                    r={8}
+                    r={9}
                     fill="#e60026"
+                    opacity="0.15"
+                  />
+                  {/* Pin shape - top circle with subtle pulse */}
+                  <circle
+                    cy={-12}
+                    r={8}
+                    fill="url(#markerGradient)"
                     stroke="white"
                     strokeWidth={2}
-                    className="animate-pulse"
+                    filter="url(#markerShadow)"
+                    className="animate-subtle-pulse_map-countries-svg"
                   />
-                  <circle r={12} fill="#e60026" fillOpacity={0.2} />
-                  <text
-                    textAnchor="middle"
-                    y={-18}
-                    style={{ fontSize: "20px", pointerEvents: "none" }}
-                  >
-                    {location.flag}
-                  </text>
+                  {/* Inner highlight on pin */}
+                  <circle
+                    cy={-12}
+                    r={4}
+                    fill="white"
+                    opacity="0.3"
+                  />
+                  {/* Pin point - triangle */}
+                  <path
+                    d="M -6 0 L 0 8 L 6 0 Z"
+                    fill="#e60026"
+                    stroke="white"
+                    strokeWidth={1.5}
+                    filter="url(#markerShadow)"
+                  />
+                  {/* Flag with bounce animation - no background */}
+                  <g className="animate-bounce-flag_map-countries-svg">
+                    <image
+                      href={location.flag}
+                      x={-16}
+                      y={-44}
+                      width={32}
+                      height={24}
+                      style={{ pointerEvents: "none" }}
+                    />
+                  </g>
                 </g>
               </Marker>
             ))}
@@ -170,50 +244,57 @@ export default function InteractiveMaps() {
       {/* Modal */}
       {selectedLocation && (
         <div
-          className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50 animate-fade-in"
+          id="modal-backdrop_map-countries-svg"
+          className="modal-backdrop_map-countries-svg animate-fade-in_map-countries-svg"
           onClick={() => setSelectedLocation(null)}
         >
           <div
-            className="bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden animate-scale-in"
+            id="modal-content_map-countries-svg"
+            className="modal-content_map-countries-svg animate-scale-in_map-countries-svg"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="p-6 text-white bg-[#e60026]">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <span className="text-3xl">{selectedLocation.flag}</span>
-                  <h2 className="text-2xl font-bold">
+            <div id="modal-header_map-countries-svg" className="modal-header_map-countries-svg">
+              <div id="modal-header-content_map-countries-svg" className="modal-header-content_map-countries-svg">
+                <div id="modal-header-left_map-countries-svg" className="modal-header-left_map-countries-svg">
+                  <img
+                    src={selectedLocation.flag}
+                    alt={`Flag of ${selectedLocation.name}`}
+                    id="modal-flag_map-countries-svg"
+                    className="modal-flag_map-countries-svg"
+                  />
+                  <h2 id="modal-title_map-countries-svg" className="modal-title_map-countries-svg">
                     {selectedLocation.name}
                   </h2>
                 </div>
                 <button
+                  id="modal-close-button_map-countries-svg"
+                  className="modal-close-button_map-countries-svg"
                   onClick={() => setSelectedLocation(null)}
-                  className="p-1 hover:bg-white/20 rounded-lg transition-colors"
                   aria-label="Cerrar modal"
                 >
-                  <X className="w-6 h-6" />
+                  <X id="modal-close-icon_map-countries-svg" className="modal-close-icon_map-countries-svg" />
                 </button>
               </div>
             </div>
 
             {/* Modal Content */}
-            <div className="p-6">
+            <div id="modal-body_map-countries-svg" className="modal-body_map-countries-svg">
               {selectedLocation.imageUrl && (
                 <img
                   src={selectedLocation.imageUrl || "/placeholder.svg"}
                   alt={selectedLocation.name}
-                  className="w-full h-48 object-cover rounded-lg mb-4"
+                  id="modal-image_map-countries-svg"
+                  className="modal-image_map-countries-svg"
                 />
               )}
-              <p className="text-gray-700 leading-relaxed mb-4">
-                {selectedLocation.description}
-              </p>
               {selectedLocation.link && (
                 <a
                   href={selectedLocation.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-6 py-3 rounded-lg text-white font-semibold transition-all hover:shadow-lg bg-[#e60026] hover:bg-[#cc0022]"
+                  id="modal-link_map-countries-svg"
+                  className="modal-link_map-countries-svg"
                 >
                   Más información
                 </a>

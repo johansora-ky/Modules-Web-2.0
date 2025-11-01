@@ -1,0 +1,587 @@
+/* Map Countries SVG Module Styles */
+
+/* Container Styles */
+#container_map-countries-svg,
+#container_unified_map-countries-svg,
+[id*="container"][id*="_map-countries-svg"] {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 0.75rem;
+}
+
+#container_map-countries-svg.hide-header,
+#container_unified_map-countries-svg.hide-header,
+[id*="container"][id*="_map-countries-svg"].hide-header {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#container_map-countries-svg.show-header,
+#container_unified_map-countries-svg.show-header,
+[id*="container"][id*="_map-countries-svg"].show-header {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+/* Responsive Container */
+@media (min-width: 640px) {
+
+    #container_map-countries-svg,
+    #container_unified_map-countries-svg,
+    [id*="container"][id*="_map-countries-svg"] {
+        padding: 0 1rem;
+    }
+
+    #container_map-countries-svg.show-header,
+    #container_unified_map-countries-svg.show-header,
+    [id*="container"][id*="_map-countries-svg"].show-header {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    #container_map-countries-svg.show-header,
+    #container_unified_map-countries-svg.show-header,
+    [id*="container"][id*="_map-countries-svg"].show-header {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}
+
+/* Header Styles */
+#header_map-countries-svg,
+#header_unified_map-countries-svg,
+[id*="header"][id*="_map-countries-svg"]:not([id*="title"]):not([id*="description"]):not([id*="content"]):not([id*="left"]):not([id*="body"]) {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+#header-title_map-countries-svg,
+#header-title_unified_map-countries-svg,
+[id*="header-title"][id*="_map-countries-svg"] {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+#header-description_map-countries-svg,
+#header-description_unified_map-countries-svg,
+[id*="header-description"][id*="_map-countries-svg"] {
+    font-size: 0.95rem;
+    color: #4b5563;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+    line-height: 1.5;
+}
+
+/* Responsive Header */
+@media (min-width: 640px) {
+
+    #header_map-countries-svg,
+    #header_unified_map-countries-svg,
+    [id*="header"][id*="_map-countries-svg"]:not([id*="title"]):not([id*="description"]):not([id*="content"]):not([id*="left"]):not([id*="body"]) {
+        margin-bottom: 2rem;
+    }
+
+    #header-title_map-countries-svg,
+    #header-title_unified_map-countries-svg,
+    [id*="header-title"][id*="_map-countries-svg"] {
+        font-size: 2.25rem;
+        margin-bottom: 1rem;
+    }
+
+    #header-description_map-countries-svg,
+    #header-description_unified_map-countries-svg,
+    [id*="header-description"][id*="_map-countries-svg"] {
+        font-size: 1rem;
+        max-width: 32rem;
+        padding: 0;
+    }
+}
+
+@media (min-width: 768px) {
+
+    #header_map-countries-svg,
+    #header_unified_map-countries-svg,
+    [id*="header"][id*="_map-countries-svg"]:not([id*="title"]):not([id*="description"]):not([id*="content"]):not([id*="left"]):not([id*="body"]) {
+        margin-bottom: 3rem;
+    }
+
+    #header-title_map-countries-svg,
+    #header-title_unified_map-countries-svg,
+    [id*="header-title"][id*="_map-countries-svg"] {
+        font-size: 3rem;
+    }
+
+    #header-description_map-countries-svg,
+    #header-description_unified_map-countries-svg,
+    [id*="header-description"][id*="_map-countries-svg"] {
+        font-size: 1.125rem;
+        max-width: 42rem;
+    }
+}
+
+/* Map Container Styles */
+#map-container_map-countries-svg {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    padding: 0.75rem;
+}
+
+#map-wrapper_map-countries-svg {
+    position: relative;
+    width: 100%;
+    height: 60dvh;
+}
+
+/* Responsive Map Container */
+@media (min-width: 640px) {
+    #map-container_map-countries-svg {
+        border-radius: 1rem;
+        padding: 1.5rem;
+    }
+
+    #map-wrapper_map-countries-svg {
+        height: 70dvh;
+    }
+}
+
+@media (min-width: 768px) {
+    #map-container_map-countries-svg {
+        padding: 2rem;
+    }
+
+    #map-wrapper_map-countries-svg {
+        height: 80dvh;
+    }
+}
+
+#map_composable_map-countries-svg,
+#map_composable_asia_map-countries-svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Modal Styles */
+.modal-backdrop_map-countries-svg,
+#modal-backdrop_map-countries-svg,
+#modal-backdrop_asia_map-countries-svg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    z-index: 50;
+}
+
+.modal-content_map-countries-svg,
+#modal-content_map-countries-svg,
+#modal-content_asia_map-countries-svg {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    max-width: 1024px;
+    width: 100%;
+    max-height: 95vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.modal-header_map-countries-svg,
+#modal-header_map-countries-svg,
+#modal-header_asia_map-countries-svg {
+    padding: 1rem;
+    background-color: #e60026;
+    color: #ffffff;
+}
+
+/* Responsive Modal */
+@media (min-width: 640px) {
+
+    .modal-backdrop_map-countries-svg,
+    #modal-backdrop_map-countries-svg,
+    #modal-backdrop_asia_map-countries-svg {
+        padding: 1rem;
+    }
+
+    .modal-content_map-countries-svg,
+    #modal-content_map-countries-svg,
+    #modal-content_asia_map-countries-svg {
+        border-radius: 1rem;
+        max-height: 90vh;
+    }
+
+    .modal-header_map-countries-svg,
+    #modal-header_map-countries-svg,
+    #modal-header_asia_map-countries-svg {
+        padding: 1.5rem;
+    }
+}
+
+.modal-header-content_map-countries-svg,
+#modal-header-content_map-countries-svg,
+#modal-header-content_asia_map-countries-svg {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-header-left_map-countries-svg,
+#modal-header-left_map-countries-svg,
+#modal-header-left_asia_map-countries-svg {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.modal-flag_map-countries-svg,
+#modal-flag_map-countries-svg,
+#modal-flag_asia_map-countries-svg {
+    width: 2rem;
+    height: 1.5rem;
+    object-fit: cover;
+    border-radius: 0.25rem;
+    flex-shrink: 0;
+}
+
+.modal-title_map-countries-svg,
+#modal-title_map-countries-svg,
+#modal-title_asia_map-countries-svg {
+    font-size: 1.125rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Responsive Modal Header */
+@media (min-width: 640px) {
+
+    .modal-header-left_map-countries-svg,
+    #modal-header-left_map-countries-svg,
+    #modal-header-left_asia_map-countries-svg {
+        gap: 0.75rem;
+    }
+
+    .modal-flag_map-countries-svg,
+    #modal-flag_map-countries-svg,
+    #modal-flag_asia_map-countries-svg {
+        width: 3rem;
+        height: 2.25rem;
+    }
+
+    .modal-title_map-countries-svg,
+    #modal-title_map-countries-svg,
+    #modal-title_asia_map-countries-svg {
+        font-size: 1.5rem;
+        white-space: normal;
+    }
+}
+
+.modal-close-button_map-countries-svg,
+#modal-close-button_map-countries-svg,
+#modal-close-button_asia_map-countries-svg {
+    padding: 0.25rem;
+    background-color: transparent;
+    border: none;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.modal-close-button_map-countries-svg:hover,
+#modal-close-button_map-countries-svg:hover,
+#modal-close-button_asia_map-countries-svg:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.modal-close-icon_map-countries-svg,
+#modal-close-icon_map-countries-svg,
+#modal-close-icon_asia_map-countries-svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.modal-body_map-countries-svg,
+#modal-body_map-countries-svg,
+#modal-body_asia_map-countries-svg {
+    padding: 1rem;
+}
+
+.modal-image_map-countries-svg,
+#modal-image_map-countries-svg,
+#modal-image_asia_map-countries-svg {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Responsive Modal Body */
+@media (min-width: 640px) {
+
+    .modal-close-icon_map-countries-svg,
+    #modal-close-icon_map-countries-svg,
+    #modal-close-icon_asia_map-countries-svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .modal-body_map-countries-svg,
+    #modal-body_map-countries-svg,
+    #modal-body_asia_map-countries-svg {
+        padding: 1.5rem;
+    }
+
+    .modal-image_map-countries-svg,
+    #modal-image_map-countries-svg,
+    #modal-image_asia_map-countries-svg {
+        height: 400px;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .modal-image_map-countries-svg,
+    #modal-image_map-countries-svg,
+    #modal-image_asia_map-countries-svg {
+        height: 600px;
+    }
+}
+
+#modal-description_map-countries-svg {
+    color: #374151;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+}
+
+.modal-link_map-countries-svg,
+#modal-link_map-countries-svg,
+#modal-link_asia_map-countries-svg {
+    display: inline-block;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.875rem;
+    background-color: #e60026;
+    text-decoration: none;
+    transition: all 0.2s;
+    width: 100%;
+    text-align: center;
+}
+
+/* Responsive Modal Link */
+@media (min-width: 640px) {
+
+    .modal-link_map-countries-svg,
+    #modal-link_map-countries-svg,
+    #modal-link_asia_map-countries-svg {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        width: auto;
+    }
+}
+
+.modal-link_map-countries-svg:hover,
+#modal-link_map-countries-svg:hover,
+#modal-link_asia_map-countries-svg:hover {
+    background-color: #cc0022;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Tabs Styles (for MapsUnified) */
+#tabs-container_map-countries-svg {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+#tabs-wrapper_map-countries-svg {
+    display: inline-flex;
+    background-color: #f3f4f6;
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+    width: 100%;
+    max-width: 20rem;
+}
+
+#tab-button-global_map-countries-svg,
+#tab-button-asia_map-countries-svg,
+#tab-button_map-countries-svg {
+    padding: 0.625rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    background-color: transparent;
+    border: none;
+    color: #4b5563;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex: 1;
+}
+
+#tab-button-global_map-countries-svg:hover,
+#tab-button-asia_map-countries-svg:hover,
+#tab-button_map-countries-svg:hover {
+    color: #111827;
+}
+
+#tab-button-global_map-countries-svg.active,
+#tab-button-asia_map-countries-svg.active,
+#tab-button_map-countries-svg.active {
+    background-color: #ffffff;
+    color: #111827;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+#tabs-content_map-countries-svg {
+    position: relative;
+    min-height: 60dvh;
+}
+
+/* Responsive Tabs */
+@media (min-width: 640px) {
+    #tabs-container_map-countries-svg {
+        margin-bottom: 2rem;
+    }
+
+    #tabs-wrapper_map-countries-svg {
+        width: auto;
+        max-width: none;
+    }
+
+    #tab-button-global_map-countries-svg,
+    #tab-button-asia_map-countries-svg,
+    #tab-button_map-countries-svg {
+        padding: 0.75rem 1.5rem;
+    }
+
+    #tabs-content_map-countries-svg {
+        min-height: 70dvh;
+    }
+}
+
+@media (min-width: 768px) {
+    #tabs-content_map-countries-svg {
+        min-height: 80dvh;
+    }
+}
+
+/* Utility Classes */
+.cursor-pointer_map-countries-svg {
+    cursor: pointer;
+}
+
+.marker-group_map-countries-svg {
+    cursor: pointer;
+}
+
+/* Animations */
+@keyframes fade-in-up_map-countries-svg {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in_map-countries-svg {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scale-in_map-countries-svg {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce-flag_map-countries-svg {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes subtle-pulse_map-countries-svg {
+
+    0%,
+    100% {
+        opacity: 0.9;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.animate-fade-in-up_map-countries-svg {
+    animation: fade-in-up_map-countries-svg 1s ease-out;
+}
+
+.animate-fade-in_map-countries-svg {
+    animation: fade-in_map-countries-svg 1.5s ease-out;
+}
+
+.animate-scale-in_map-countries-svg {
+    animation: scale-in_map-countries-svg 0.3s ease-out;
+}
+
+.animate-bounce-flag_map-countries-svg {
+    animation: bounce-flag_map-countries-svg 2s ease-in-out infinite;
+}
+
+.animate-subtle-pulse_map-countries-svg {
+    animation: subtle-pulse_map-countries-svg 3s ease-in-out infinite;
+}
+
+/* Country Hover Effect */
+.country-hover-scale_map-countries-svg {
+    transition: transform 0.3s ease-out;
+    transform-origin: center;
+}
+
+.country-hover-scale_map-countries-svg:hover {
+    transform: scale(1.03) translateY(-2px);
+}
+
+.country-hover-scale_map-countries-svg:hover path {
+    transition: transform 0.3s ease-out;
+}

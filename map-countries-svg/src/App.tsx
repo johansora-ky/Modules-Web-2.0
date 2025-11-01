@@ -1,8 +1,8 @@
 import "./App.css";
-import InteractiveMapModule from "./ui/Maps";
+import MapsUnified from "./ui/MapsUnified";
 
 function App() {
-  return <InteractiveMapModule />;
+  return <MapsUnified />;
 }
 
 export default App;

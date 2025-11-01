@@ -2,8 +2,10 @@
 @import "tw-animate-css";
 
 @layer base {
+
   /* Added custom animations for hero section */
   @keyframes float {
+
     0%,
     100% {
       transform: translateY(0px);
@@ -15,6 +17,7 @@
   }
 
   @keyframes float-delayed {
+
     0%,
     100% {
       transform: translateY(0px);
@@ -26,6 +29,7 @@
   }
 
   @keyframes bounce-slow {
+
     0%,
     100% {
       transform: translateY(0);
@@ -81,6 +85,7 @@
 
   /* Custom animations for map module */
   @keyframes ping {
+
     75%,
     100% {
       transform: scale(2);
@@ -90,5 +95,53 @@
 
   .animate-ping {
     animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  /* Flag bounce animation for map-countries-svg */
+  @keyframes bounce-flag-map-countries-svg {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+
+  .animate-bounce-flag-map-countries-svg {
+    animation: bounce-flag-map-countries-svg 2s ease-in-out infinite;
+  }
+
+  /* Subtle marker pulse animation for map-countries-svg */
+  @keyframes subtle-pulse-map-countries-svg {
+
+    0%,
+    100% {
+      opacity: 0.9;
+    }
+
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .animate-subtle-pulse-map-countries-svg {
+    animation: subtle-pulse-map-countries-svg 3s ease-in-out infinite;
+  }
+
+  /* Country hover scale effect for map-countries-svg */
+  .country-hover-scale-map-countries-svg {
+    transition: transform 0.3s ease-out;
+    transform-origin: center;
+  }
+
+  .country-hover-scale-map-countries-svg:hover {
+    transform: scale(1.03) translateY(-2px);
+  }
+
+  .country-hover-scale-map-countries-svg:hover path {
+    transition: transform 0.3s ease-out;
   }
 }
