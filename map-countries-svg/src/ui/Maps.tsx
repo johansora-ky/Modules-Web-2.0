@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   ComposableMap,
   Geographies,
@@ -8,13 +8,16 @@ import {
   Marker,
 } from "react-simple-maps";
 import { X } from "lucide-react";
+import { useIsMobile } from "../hooks/useIsMobile";
 import "../styles/map-countries-svg.css";
 
 interface Location {
   name: string;
+  nameInWorldAtlas: string;
   coordinates: [number, number];
   description: string;
-  imageUrl?: string;
+  imageUrlDesktop?: string;
+  imageUrlMobile?: string;
   link?: string;
   flag: string;
 }
@@ -22,47 +25,63 @@ interface Location {
 const locations: Location[] = [
   {
     name: "Colombia",
+    nameInWorldAtlas: "Colombia",
     coordinates: [-74.2973, 4.5709],
     description:
       "Economía emergente con fuerte sector tecnológico y financiero en expansión.",
-    imageUrl: "/bogota-colombia-skyline.jpg",
+    imageUrlDesktop:
+      "https://www-krediya-com.sandbox.hs-sites.com/hs-fs/hubfs/82c57f2a9c2fcb5eb1c8d115f1fd3e7402d25d9b-1.png?width=1920&name=82c57f2a9c2fcb5eb1c8d115f1fd3e7402d25d9b-1.png",
+    imageUrlMobile:
+      "https://www-krediya-com.sandbox.hs-sites.com/hs-fs/hubfs/23e9bb4541260ea22a16175d73515b34c8a9a2a6.png?width=1080&name=23e9bb4541260ea22a16175d73515b34c8a9a2a6.png",
     flag: "https://flagcdn.com/48x36/co.png",
   },
   {
     name: "Estados Unidos",
+    nameInWorldAtlas: "United States of America",
     coordinates: [-95.7129, 37.0902],
     description:
       "La economía más grande del mundo con un sector financiero altamente desarrollado.",
     flag: "https://flagcdn.com/48x36/us.png",
+    imageUrlDesktop:
+      "https://www-krediya-com.sandbox.hs-sites.com/hs-fs/hubfs/Remesa_panama_EEUU_Tabla_POPUP_horz.png?width=1920&name=Remesa_panama_EEUU_Tabla_POPUP_horz.png",
+    imageUrlMobile:
+      "https://www-krediya-com.sandbox.hs-sites.com/hs-fs/hubfs/Remesa_panama_EEUU_Tabla_POPUP_VERT.png?width=1080&name=Remesa_panama_EEUU_Tabla_POPUP_VERT.png",
   },
   {
     name: "Nicaragua",
+    nameInWorldAtlas: "Nicaragua",
     coordinates: [-85.2072, 12.8654],
     description:
       "Mercado en crecimiento con oportunidades en servicios financieros.",
     flag: "https://flagcdn.com/48x36/ni.png",
+    imageUrlDesktop:
+      "https://www-krediya-com.sandbox.hs-sites.com/hs-fs/hubfs/Remesa_panama_nicaragua_Tabla_POPUP_horz.png?width=1920&name=Remesa_panama_nicaragua_Tabla_POPUP_horz.png",
+    imageUrlMobile:
+      "https://www-krediya-com.sandbox.hs-sites.com/hs-fs/hubfs/Remesa_panama_nicaragua_Tabla_POPUP_VERT.png?width=1080&name=Remesa_panama_nicaragua_Tabla_POPUP_VERT.png",
   },
   {
-    name: "Panamá",
-    coordinates: [-80.7821, 8.538],
+    name: "República Dominicana",
+    nameInWorldAtlas: "Dominican Rep.",
+    coordinates: [-70.1627, 18.7357],
     description:
-      "Centro financiero internacional y hub logístico de las Américas.",
-    imageUrl: "https://www.krediya.com.pa/hs-fs/hubfs/Remesa_panama_R.DOM_Tabla_POPUP_horz-1.png?width=1920&name=Remesa_panama_R.DOM_Tabla_POPUP_horz-1.png",
-    flag: "https://flagcdn.com/48x36/pa.png",
+      "Economía caribeña en crecimiento con oportunidades en servicios financieros y turismo.",
+    imageUrlDesktop:
+      "https://www-krediya-com.sandbox.hs-sites.com/hs-fs/hubfs/Remesa_panama_R.DOM_Tabla_POPUP_horz.png?width=1920&name=Remesa_panama_R.DOM_Tabla_POPUP_horz.png",
+    imageUrlMobile:
+      "https://www-krediya-com.sandbox.hs-sites.com/hs-fs/hubfs/Remesa_panama_R.DOMI_Tabla_POPUP_VERT.png?width=1080&name=Remesa_panama_R.DOMI_Tabla_POPUP_VERT.png",
+    flag: "https://flagcdn.com/48x36/do.png",
   },
   {
     name: "Costa Rica",
+    nameInWorldAtlas: "Costa Rica",
     coordinates: [-84.0907, 9.7489],
     description:
       "Economía estable con alto desarrollo en tecnología y servicios.",
     flag: "https://flagcdn.com/48x36/cr.png",
-  },
-  {
-    name: "China",
-    coordinates: [104.1954, 35.8617],
-    description:
-      "Potencia económica global con rápida innovación en tecnología financiera.",
-    flag: "https://flagcdn.com/48x36/cn.png",
+    imageUrlDesktop:
+      "https://www-krediya-com.sandbox.hs-sites.com/hs-fs/hubfs/Remesa_panama_costa%20rica_Tabla_POPUP_horz.png?width=1920&name=Remesa_panama_costa%20rica_Tabla_POPUP_horz.png",
+    imageUrlMobile:
+      "https://www-krediya-com.sandbox.hs-sites.com/hs-fs/hubfs/Remesa_panama_costa%20rica_Tabla_POPUP_VERT.png?width=1080&name=Remesa_panama_costa%20rica_Tabla_POPUP_VERT.png",
   },
 ];
 
@@ -75,7 +94,7 @@ const highlightedCountries = [
   "Colombia",
   "United States of America", // EEUU en world-atlas
   "Nicaragua",
-  "Panama", // world-atlas usa "Panama" sin tilde
+  "Dominican Rep.", // República Dominicana en world-atlas (abreviado)
   "Costa Rica",
 ];
 
@@ -83,42 +102,80 @@ interface InteractiveMapsProps {
   hideHeader?: boolean;
 }
 
-export default function InteractiveMaps({ hideHeader = false }: InteractiveMapsProps) {
+export default function InteractiveMaps({
+  hideHeader = false,
+}: InteractiveMapsProps) {
   const [selectedLocation, setSelectedLocation] = useState<Location | null>(
     null
   );
 
-  return (
-    <div id="container_map-countries-svg" className={hideHeader ? "hide-header" : "show-header"}>
-      {/* Header */}
-      {!hideHeader && (
-        <div id="header_map-countries-svg">
-          <h1 id="header-title_map-countries-svg">
-            Nuestra Presencia Global
-          </h1>
-          <p id="header-description_map-countries-svg">
-            Descubre nuestras operaciones en mercados clave alrededor del mundo
-          </p>
-        </div>
-      )}
+  // Use custom hook to detect mobile device (640px breakpoint)
+  const isMobile = useIsMobile(640);
 
+  // Responsive projection config state
+  const [projectionConfig, setProjectionConfig] = useState({
+    center: [-95, 20] as [number, number],
+    scale: 700,
+  });
+
+  // Update projection config when screen size changes
+  useEffect(() => {
+    if (isMobile) {
+      // Mobile configuration: zoomed out more to see the whole map
+      setProjectionConfig({
+        center: [-85, 25],
+        scale: 1300,
+      });
+    } else {
+      // Desktop configuration: original values
+      setProjectionConfig({
+        center: [-95, 20],
+        scale: 700,
+      });
+    }
+  }, [isMobile]);
+
+  const searchLocation = (name: string) => {
+    const location = locations.find((loc) => loc.nameInWorldAtlas === name);
+
+    if (location) {
+      setSelectedLocation(location);
+    } else {
+      console.log("Location not found");
+    }
+  };
+
+  return (
+    <div
+      id="container_map-countries-svg"
+      className={hideHeader ? "hide-header" : "show-header"}
+    >
       {/* Map Container */}
       <div id="map-container_map-countries-svg">
         <div id="map-wrapper_map-countries-svg">
           <ComposableMap
             projection="geoMercator"
-            projectionConfig={{
-              center: [-95, 20],
-              scale: 700,
-            }}
+            projectionConfig={projectionConfig}
             id="map_composable_map-countries-svg"
           >
             <defs>
-              <linearGradient id="countryGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <linearGradient
+                id="countryGradient"
+                x1="0%"
+                y1="0%"
+                x2="0%"
+                y2="100%"
+              >
                 <stop offset="0%" stopColor="#60a5fa" stopOpacity="0.6" />
                 <stop offset="100%" stopColor="#004ebc" stopOpacity="0.8" />
               </linearGradient>
-              <linearGradient id="countryGradientHover" x1="0%" y1="0%" x2="0%" y2="100%">
+              <linearGradient
+                id="countryGradientHover"
+                x1="0%"
+                y1="0%"
+                x2="0%"
+                y2="100%"
+              >
                 <stop offset="0%" stopColor="#60a5fa" stopOpacity="0.8" />
                 <stop offset="100%" stopColor="#004ebc" stopOpacity="1" />
               </linearGradient>
@@ -140,9 +197,6 @@ export default function InteractiveMaps({ hideHeader = false }: InteractiveMapsP
             </defs>
             <Geographies geography={geoUrl}>
               {({ geographies }) => {
-                // Console log para ver los nombres de los países en consola
-                // geographies.forEach(geo => console.log(geo.properties.name));
-
                 return geographies.map((geo) => {
                   const isHighlighted = highlightedCountries.includes(
                     geo.properties.name
@@ -161,11 +215,14 @@ export default function InteractiveMaps({ hideHeader = false }: InteractiveMapsP
                         default: { outline: "none" },
                         hover: {
                           outline: "none",
-                          fill: isHighlighted ? "url(#countryGradientHover)" : "#D1D5DB",
+                          fill: isHighlighted
+                            ? "url(#countryGradientHover)"
+                            : "#D1D5DB",
                           fillOpacity: isHighlighted ? 1 : 0.6,
                         },
                         pressed: { outline: "none" },
                       }}
+                      onClick={() => searchLocation(geo.properties.name)}
                     />
                   );
 
@@ -186,18 +243,17 @@ export default function InteractiveMaps({ hideHeader = false }: InteractiveMapsP
               }}
             </Geographies>
             {locations.map((location) => (
-              <Marker key={location.name} coordinates={location.coordinates}>
+              <Marker
+                key={location.name}
+                coordinates={location.coordinates}
+                onClick={() => setSelectedLocation(location)}
+              >
                 <g
-                  onClick={() => setSelectedLocation(location)}
                   className="cursor-pointer_map-countries-svg marker-group_map-countries-svg"
                   style={{ transformOrigin: "center bottom" }}
                 >
                   {/* Static outer glow */}
-                  <circle
-                    r={9}
-                    fill="#e60026"
-                    opacity="0.15"
-                  />
+                  <circle r={9} fill="#e60026" opacity="0.15" />
                   {/* Pin shape - top circle with subtle pulse */}
                   <circle
                     cy={-12}
@@ -209,12 +265,7 @@ export default function InteractiveMaps({ hideHeader = false }: InteractiveMapsP
                     className="animate-subtle-pulse_map-countries-svg"
                   />
                   {/* Inner highlight on pin */}
-                  <circle
-                    cy={-12}
-                    r={4}
-                    fill="white"
-                    opacity="0.3"
-                  />
+                  <circle cy={-12} r={4} fill="white" opacity="0.3" />
                   {/* Pin point - triangle */}
                   <path
                     d="M -6 0 L 0 8 L 6 0 Z"
@@ -227,10 +278,10 @@ export default function InteractiveMaps({ hideHeader = false }: InteractiveMapsP
                   <g className="animate-bounce-flag_map-countries-svg">
                     <image
                       href={location.flag}
-                      x={-16}
-                      y={-44}
-                      width={32}
-                      height={24}
+                      x={isMobile ? -30 : -20}
+                      y={isMobile ? -45 : -27}
+                      width={isMobile ? 60 : 38}
+                      height={isMobile ? 52 : 30}
                       style={{ pointerEvents: "none" }}
                     />
                   </g>
@@ -254,16 +305,28 @@ export default function InteractiveMaps({ hideHeader = false }: InteractiveMapsP
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div id="modal-header_map-countries-svg" className="modal-header_map-countries-svg">
-              <div id="modal-header-content_map-countries-svg" className="modal-header-content_map-countries-svg">
-                <div id="modal-header-left_map-countries-svg" className="modal-header-left_map-countries-svg">
+            <div
+              id="modal-header_map-countries-svg"
+              className="modal-header_map-countries-svg"
+            >
+              <div
+                id="modal-header-content_map-countries-svg"
+                className="modal-header-content_map-countries-svg"
+              >
+                <div
+                  id="modal-header-left_map-countries-svg"
+                  className="modal-header-left_map-countries-svg"
+                >
                   <img
                     src={selectedLocation.flag}
                     alt={`Flag of ${selectedLocation.name}`}
                     id="modal-flag_map-countries-svg"
                     className="modal-flag_map-countries-svg"
                   />
-                  <h2 id="modal-title_map-countries-svg" className="modal-title_map-countries-svg">
+                  <h2
+                    id="modal-title_map-countries-svg"
+                    className="modal-title_map-countries-svg"
+                  >
                     {selectedLocation.name}
                   </h2>
                 </div>
@@ -273,16 +336,31 @@ export default function InteractiveMaps({ hideHeader = false }: InteractiveMapsP
                   onClick={() => setSelectedLocation(null)}
                   aria-label="Cerrar modal"
                 >
-                  <X id="modal-close-icon_map-countries-svg" className="modal-close-icon_map-countries-svg" />
+                  <X
+                    id="modal-close-icon_map-countries-svg"
+                    className="modal-close-icon_map-countries-svg"
+                  />
                 </button>
               </div>
             </div>
 
             {/* Modal Content */}
-            <div id="modal-body_map-countries-svg" className="modal-body_map-countries-svg">
-              {selectedLocation.imageUrl && (
+            <div
+              id="modal-body_map-countries-svg"
+              className="modal-body_map-countries-svg"
+            >
+              {(selectedLocation.imageUrlDesktop ||
+                selectedLocation.imageUrlMobile) && (
                 <img
-                  src={selectedLocation.imageUrl || "/placeholder.svg"}
+                  src={
+                    isMobile
+                      ? selectedLocation.imageUrlMobile ||
+                        selectedLocation.imageUrlDesktop ||
+                        "/placeholder.svg"
+                      : selectedLocation.imageUrlDesktop ||
+                        selectedLocation.imageUrlMobile ||
+                        "/placeholder.svg"
+                  }
                   alt={selectedLocation.name}
                   id="modal-image_map-countries-svg"
                   className="modal-image_map-countries-svg"
