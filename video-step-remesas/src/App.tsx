@@ -1,5 +1,5 @@
 import StepTimeline from "@/ui/step-timeline";
-import ReactPlayer from "react-player";
+// import ReactPlayer from "react-player";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
 export default function App() {
@@ -33,16 +33,17 @@ export default function App() {
 
   return (
     <div
-      className={`min-h-screen bg-white text-gray-900 ${
-        isMobile ? "py-8 px-4" : "py-16 px-4 w-[70%] mx-auto"
-      }`}
+      id={
+        isMobile
+          ? "app_mobile_video_step_remesas"
+          : "app_desktop_video_step_remesas"
+      }
     >
-      <div className="mx-auto">
-        {/* Desktop Layout */}
+      <div id="container_video_step_remesas">
         {!isMobile && (
-          <div className="flex gap-10">
+          <div id="layout_desktop_video_step_remesas">
             <div
-              className={`w-[60%] transition-opacity duration-700 ease-in-out flex items-center justify-center`}
+              id="timeline_col_video_step_remesas"
               style={{ animation: "fadeIn 0.7s ease-in-out" }}
             >
               <StepTimeline
@@ -53,27 +54,30 @@ export default function App() {
                 progressInterval={3000}
               />
             </div>
-            <div className="flex justify-center w-[40%] items-center relative overflow-hidden rounded-2xl">
-              <ReactPlayer
+            <div
+              id="video_col_video_step_remesas"
+              style={{ animation: "fadeIn 0.7s ease-in-out" }}
+            >
+              <video
                 src="https://22317019.fs1.hubspotusercontent-na1.net/hubfs/22317019/remesas%202.mp4"
                 loop
-                playing={true}
-                width="auto"
-                height="auto"
+                autoPlay
+                controls
+                playsInline
+                style={{ width: "100%", height: "auto" }}
               />
             </div>
           </div>
         )}
 
-        {/* Mobile Layout */}
         {isMobile && (
-          <div className="flex flex-col">
-            <div className="w-full overflow-hidden rounded-2xl mb-4">
-              <ReactPlayer
+          <div id="layout_mobile_video_step_remesas">
+            <div id="video_mobile_wrapper_video_step_remesas">
+              <video
                 src="https://22317019.fs1.hubspotusercontent-na1.net/hubfs/22317019/remesas%202.mp4"
-                width="100%"
-                height="auto"
-                controls={true}
+                controls
+                playsInline
+                style={{ width: "100%", height: "auto" }}
               />
             </div>
 

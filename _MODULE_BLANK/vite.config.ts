@@ -5,20 +5,13 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "./",
   plugins: [react(), tailwindcss()],
   build: {
-    outDir: "../components-exports/video-step-remesas", // genera el build en una carpeta paralela
+    outDir: "../components-exports/[name-of-the-module]", // genera el build en una carpeta paralela
     emptyOutDir: true,
-    modulePreload: false,
-    lib: {
-      entry: path.resolve(__dirname, "./src/standalone.tsx"),
-      name: "VideoStepRemesas",
-      formats: ["iife"],
-      fileName: () => "module.js",
-    },
     rollupOptions: {
       output: {
+        entryFileNames: "module.js",
         assetFileNames: "module.[ext]",
       },
     },
