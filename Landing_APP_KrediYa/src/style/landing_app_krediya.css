@@ -1,0 +1,844 @@
+/* Landing App KrediYa - Custom CSS Styles */
+/* All classes use suffix _landing_app_krediya */
+
+/* ===== GLOBAL STYLES ===== */
+#main_landing_app_krediya {
+  width: 100% !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* ===== HERO SECTION ===== */
+#hero_section_landing_app_krediya {
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+#hero_bg_decoration_1_landing_app_krediya {
+  position: absolute !important;
+  top: 5rem !important;
+  right: 2.5rem !important;
+  width: 18rem !important;
+  height: 18rem !important;
+  background-color: #eff6ff !important;
+  border-radius: 9999px !important;
+  filter: blur(80px) !important;
+  opacity: 0.4 !important;
+}
+
+#hero_bg_decoration_2_landing_app_krediya {
+  position: absolute !important;
+  bottom: 10rem !important;
+  left: 2.5rem !important;
+  width: 24rem !important;
+  height: 24rem !important;
+  background-color: #fef2f2 !important;
+  border-radius: 9999px !important;
+  filter: blur(80px) !important;
+  opacity: 0.3 !important;
+}
+
+#hero_content_landing_app_krediya {
+  position: relative !important;
+  z-index: 10 !important;
+  text-align: center !important;
+  max-width: 72rem !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+#hero_badge_landing_app_krediya {
+  margin-bottom: 2rem !important;
+  display: inline-block !important;
+}
+
+#hero_badge_text_landing_app_krediya {
+  background: linear-gradient(to right, #2563eb, #dc2626) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+}
+
+#hero_title_landing_app_krediya {
+  font-size: 3.75rem !important;
+  font-weight: 700 !important;
+  color: #000000 !important;
+  margin-bottom: 1.5rem !important;
+  line-height: 1.1 !important;
+  text-wrap: balance !important;
+}
+
+@media (min-width: 768px) {
+  #hero_title_landing_app_krediya {
+    font-size: 4.5rem !important;
+  }
+}
+
+#hero_subtitle_landing_app_krediya {
+  font-size: 1.25rem !important;
+  color: #4b5563 !important;
+  margin-bottom: 3rem !important;
+  max-width: 42rem !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-wrap: pretty !important;
+}
+
+@media (min-width: 768px) {
+  #hero_subtitle_landing_app_krediya {
+    font-size: 1.5rem !important;
+  }
+}
+
+#hero_badges_container_landing_app_krediya {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1rem !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-bottom: 4rem !important;
+}
+
+@media (min-width: 640px) {
+  #hero_badges_container_landing_app_krediya {
+    flex-direction: row !important;
+  }
+}
+
+.hero_badge_link_landing_app_krediya {
+  transition: all 0.3s ease !important;
+  transform: scale(1) !important;
+}
+
+.hero_badge_link_landing_app_krediya:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.hero_badge_img_landing_app_krediya {
+  height: 4rem !important;
+  width: auto !important;
+}
+
+@media (min-width: 768px) {
+  .hero_badge_img_landing_app_krediya {
+    height: 5rem !important;
+  }
+}
+
+#hero_phone_container_landing_app_krediya {
+  position: relative !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 24rem !important;
+}
+
+#hero_phone_animation_landing_app_krediya {
+  transition: transform 1s ease-in-out !important;
+}
+
+#hero_phone_img_landing_app_krediya {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 28rem !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+#hero_scroll_indicator_landing_app_krediya {
+  position: absolute !important;
+  bottom: 2rem !important;
+  animation: bounce 1s infinite !important;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0) !important;
+  }
+  50% {
+    transform: translateY(-25%) !important;
+  }
+}
+
+#hero_scroll_icon_landing_app_krediya {
+  color: #9ca3af !important;
+}
+
+/* ===== FEATURES SECTION ===== */
+#features_section_landing_app_krediya {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  background-color: #ffffff !important;
+}
+
+#features_container_landing_app_krediya {
+  max-width: 72rem !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+#features_header_landing_app_krediya {
+  text-align: center !important;
+  margin-bottom: 4rem !important;
+}
+
+#features_title_landing_app_krediya {
+  font-size: 3rem !important;
+  font-weight: 700 !important;
+  color: #000000 !important;
+  margin-bottom: 1rem !important;
+}
+
+@media (min-width: 768px) {
+  #features_title_landing_app_krediya {
+    font-size: 3.75rem !important;
+  }
+}
+
+#features_subtitle_landing_app_krediya {
+  font-size: 1.25rem !important;
+  color: #4b5563 !important;
+}
+
+#features_grid_landing_app_krediya {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 2.5rem !important;
+  width: auto !important;
+  padding: 1rem !important;
+}
+
+@media (min-width: 1024px) {
+  #features_grid_landing_app_krediya {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* ===== FULL CONTROL SECTION ===== */
+#full_control_section_landing_app_krediya {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  background-color: #ffffff !important;
+}
+
+#full_control_container_landing_app_krediya {
+  max-width: 72rem !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+#full_control_grid_landing_app_krediya {
+  display: grid !important;
+  gap: 3rem !important;
+  align-items: center !important;
+}
+
+@media (min-width: 768px) {
+  #full_control_grid_landing_app_krediya {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+#full_control_content_landing_app_krediya {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.5rem !important;
+  align-items: center !important;
+}
+
+@media (min-width: 1024px) {
+  #full_control_content_landing_app_krediya {
+    align-items: flex-start !important;
+  }
+}
+
+#full_control_header_landing_app_krediya {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+@media (min-width: 1024px) {
+  #full_control_header_landing_app_krediya {
+    align-items: flex-start !important;
+  }
+}
+
+#full_control_badge_landing_app_krediya {
+  display: inline-block !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  text-align: center !important;
+  background-color: #fee2e2 !important;
+  color: #dc2626 !important;
+  border-radius: 9999px !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
+}
+
+@media (min-width: 1024px) {
+  #full_control_badge_landing_app_krediya {
+    text-align: left !important;
+  }
+}
+
+#full_control_title_landing_app_krediya {
+  font-size: 3rem !important;
+  font-weight: 700 !important;
+  color: #000000 !important;
+  margin-bottom: 1rem !important;
+  line-height: 1.1 !important;
+  text-align: center !important;
+}
+
+@media (min-width: 1024px) {
+  #full_control_title_landing_app_krediya {
+    text-align: left !important;
+  }
+}
+
+#full_control_description_landing_app_krediya {
+  font-size: 1.25rem !important;
+  color: #4b5563 !important;
+  margin-bottom: 1.5rem !important;
+  text-align: center !important;
+}
+
+@media (min-width: 1024px) {
+  #full_control_description_landing_app_krediya {
+    text-align: left !important;
+  }
+}
+
+#full_control_list_landing_app_krediya {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1rem !important;
+  align-items: center !important;
+}
+
+@media (min-width: 1024px) {
+  #full_control_list_landing_app_krediya {
+    align-items: flex-start !important;
+  }
+}
+
+.full_control_list_item_landing_app_krediya {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 0.75rem !important;
+  width: 90% !important;
+}
+
+#full_control_list_icon_landing_app_krediya {
+  flex-shrink: 0 !important;
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  border-radius: 9999px !important;
+  background-color: #dc2626 !important;
+  color: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: 700 !important;
+  font-size: 0.875rem !important;
+}
+
+#full_control_list_text_landing_app_krediya {
+  font-size: 1.125rem !important;
+  color: #374151 !important;
+}
+
+#full_control_phone_container_landing_app_krediya {
+  position: relative !important;
+}
+
+#full_control_phone_animation_landing_app_krediya {
+  transition: transform 1s ease-in-out !important;
+}
+
+#full_control_phone_img_landing_app_krediya {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 28rem !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* ===== TESTIMONIALS SECTION ===== */
+#testimonials_section_landing_app_krediya {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  background-color: #ffffff !important;
+}
+
+#testimonials_container_landing_app_krediya {
+  max-width: 72rem !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+#testimonials_header_landing_app_krediya {
+  text-align: center !important;
+  margin-bottom: 4rem !important;
+}
+
+#testimonials_title_landing_app_krediya {
+  font-size: 3rem !important;
+  font-weight: 700 !important;
+  color: #000000 !important;
+  margin-bottom: 1rem !important;
+}
+
+@media (min-width: 768px) {
+  #testimonials_title_landing_app_krediya {
+    font-size: 3.75rem !important;
+  }
+}
+
+#testimonials_subtitle_landing_app_krediya {
+  font-size: 1.25rem !important;
+  color: #4b5563 !important;
+}
+
+#testimonials_carousel_container_landing_app_krediya {
+  position: relative !important;
+}
+
+#testimonials_carousel_landing_app_krediya {
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 1rem !important;
+}
+
+#testimonials_card_landing_app_krediya {
+  padding: 2rem !important;
+  border-radius: 1rem !important;
+  background: linear-gradient(to bottom right, #f9fafb, #ffffff) !important;
+  border: 2px solid #f3f4f6 !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.3s ease !important;
+}
+
+#testimonials_card_landing_app_krediya:hover {
+  border-color: #2563eb !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+}
+
+@media (min-width: 768px) {
+  #testimonials_card_landing_app_krediya {
+    padding: 3rem !important;
+  }
+}
+
+#testimonials_stars_landing_app_krediya {
+  display: flex !important;
+  gap: 0.25rem !important;
+  margin-bottom: 1.5rem !important;
+  justify-content: center !important;
+}
+
+.testimonials_star_yellow_landing_app_krediya {
+  fill: #facc15 !important;
+  color: #facc15 !important;
+  stroke: #facc15 !important;
+  stroke-width: 0 !important;
+}
+
+#testimonials_text_landing_app_krediya {
+  color: #374151 !important;
+  font-size: 1.25rem !important;
+  margin-bottom: 2rem !important;
+  line-height: 1.75 !important;
+  text-align: center !important;
+  max-width: 48rem !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (min-width: 768px) {
+  #testimonials_text_landing_app_krediya {
+    font-size: 1.5rem !important;
+  }
+}
+
+#testimonials_author_landing_app_krediya {
+  border-top: 1px solid #e5e7eb !important;
+  padding-top: 1.5rem !important;
+}
+
+#testimonials_name_landing_app_krediya {
+  font-weight: 700 !important;
+  color: #000000 !important;
+  font-size: 1.25rem !important;
+  text-align: center !important;
+}
+
+#testimonials_role_landing_app_krediya {
+  font-size: 0.875rem !important;
+  color: #4b5563 !important;
+  text-align: center !important;
+  margin-top: 0.25rem !important;
+}
+
+#testimonials_nav_prev_landing_app_krediya {
+  position: absolute !important;
+  left: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) translateX(-1rem) !important;
+  background-color: #ffffff !important;
+  border-radius: 9999px !important;
+  padding: 0.75rem !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.3s ease !important;
+  border: 2px solid #f3f4f6 !important;
+  cursor: pointer !important;
+}
+
+@media (min-width: 768px) {
+  #testimonials_nav_prev_landing_app_krediya {
+    transform: translateY(-50%) translateX(-3rem) !important;
+  }
+}
+
+#testimonials_nav_prev_landing_app_krediya:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  transform: translateY(-50%) translateX(-1rem) scale(1.1) !important;
+}
+
+@media (min-width: 768px) {
+  #testimonials_nav_prev_landing_app_krediya:hover {
+    transform: translateY(-50%) translateX(-3rem) scale(1.1) !important;
+  }
+}
+
+#testimonials_nav_prev_landing_app_krediya:hover {
+  border-color: #2563eb !important;
+}
+
+#testimonials_nav_next_landing_app_krediya {
+  position: absolute !important;
+  right: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) translateX(1rem) !important;
+  background-color: #ffffff !important;
+  border-radius: 9999px !important;
+  padding: 0.75rem !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.3s ease !important;
+  border: 2px solid #f3f4f6 !important;
+  cursor: pointer !important;
+}
+
+@media (min-width: 768px) {
+  #testimonials_nav_next_landing_app_krediya {
+    transform: translateY(-50%) translateX(3rem) !important;
+  }
+}
+
+#testimonials_nav_next_landing_app_krediya:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  transform: translateY(-50%) translateX(1rem) scale(1.1) !important;
+}
+
+@media (min-width: 768px) {
+  #testimonials_nav_next_landing_app_krediya:hover {
+    transform: translateY(-50%) translateX(3rem) scale(1.1) !important;
+  }
+}
+
+#testimonials_nav_next_landing_app_krediya:hover {
+  border-color: #2563eb !important;
+}
+
+#testimonials_nav_icon_landing_app_krediya,
+.testimonials_nav_icon_landing_app_krediya {
+  color: #374151 !important;
+}
+
+#testimonials_dots_landing_app_krediya {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  margin-top: 2rem !important;
+}
+
+.testimonials_dot_landing_app_krediya {
+  transition: all 0.3s ease !important;
+  border-radius: 9999px !important;
+  cursor: pointer !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.testimonials_dot_active_landing_app_krediya {
+  width: 2rem !important;
+  height: 0.75rem !important;
+  background-color: #2563eb !important;
+  border-radius: 9999px !important;
+}
+
+.testimonials_dot_inactive_landing_app_krediya {
+  width: 0.75rem !important;
+  height: 0.75rem !important;
+  background-color: #d1d5db !important;
+  border-radius: 9999px !important;
+}
+
+.testimonials_dot_inactive_landing_app_krediya:hover {
+  background-color: #9ca3af !important;
+}
+
+/* ===== FINAL CTA SECTION ===== */
+#final_cta_section_landing_app_krediya {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  background: linear-gradient(to right, #2563eb, #1e40af) !important;
+  color: #ffffff !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+#final_cta_bg_1_landing_app_krediya {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  width: 24rem !important;
+  height: 24rem !important;
+  background-color: rgba(59, 130, 246, 0.2) !important;
+  border-radius: 9999px !important;
+  filter: blur(80px) !important;
+}
+
+#final_cta_bg_2_landing_app_krediya {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 24rem !important;
+  height: 24rem !important;
+  background-color: rgba(220, 38, 38, 0.1) !important;
+  border-radius: 9999px !important;
+  filter: blur(80px) !important;
+}
+
+#final_cta_container_landing_app_krediya {
+  max-width: 56rem !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+#final_cta_title_landing_app_krediya {
+  font-size: 3rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 1.5rem !important;
+  line-height: 1.1 !important;
+  text-wrap: balance !important;
+}
+
+@media (min-width: 768px) {
+  #final_cta_title_landing_app_krediya {
+    font-size: 3.75rem !important;
+  }
+}
+
+#final_cta_subtitle_landing_app_krediya {
+  font-size: 1.25rem !important;
+  margin-bottom: 3rem !important;
+  opacity: 0.9 !important;
+  text-wrap: pretty !important;
+}
+
+@media (min-width: 768px) {
+  #final_cta_subtitle_landing_app_krediya {
+    font-size: 1.5rem !important;
+  }
+}
+
+#final_cta_badges_container_landing_app_krediya {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1rem !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-bottom: 3rem !important;
+}
+
+@media (min-width: 640px) {
+  #final_cta_badges_container_landing_app_krediya {
+    flex-direction: row !important;
+  }
+}
+
+.final_cta_badge_link_landing_app_krediya {
+  transition: all 0.3s ease !important;
+  transform: scale(1) !important;
+}
+
+.final_cta_badge_link_landing_app_krediya:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.final_cta_badge_img_landing_app_krediya {
+  height: 4rem !important;
+  width: auto !important;
+}
+
+@media (min-width: 768px) {
+  .final_cta_badge_img_landing_app_krediya {
+    height: 5rem !important;
+  }
+}
+
+#final_cta_icons_container_landing_app_krediya {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 2rem !important;
+  margin-bottom: 2rem !important;
+  flex-wrap: wrap !important;
+}
+
+.final_cta_icon_item_landing_app_krediya {
+  text-align: center !important;
+}
+
+#final_cta_icon_wrapper_landing_app_krediya,
+.final_cta_icon_wrapper_landing_app_krediya {
+  display: flex !important;
+  justify-content: center !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.final_cta_icon_text_landing_app_krediya {
+  font-size: 0.875rem !important;
+  opacity: 0.8 !important;
+}
+
+.final_cta_icon_lucide_landing_app_krediya {
+  color: #ffffff !important;
+}
+
+#final_cta_trust_badge_landing_app_krediya {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(8px) !important;
+  border-radius: 9999px !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+#final_cta_trust_text_landing_app_krediya {
+  font-size: 0.875rem !important;
+}
+
+/* ===== CARD COMPONENT ===== */
+/* Using existing classes from CardStyle.css for card-grid-cards-effect-appear */
+
+.icon-container-grid-cards-effect-appear {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1rem !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.card_icon_img_landing_app_krediya {
+  width: 80px !important;
+  height: 80px !important;
+}
+
+.card_title_landing_app_krediya {
+  color: #030303 !important;
+  text-align: center !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+}
+
+/* Responsive utilities */
+@media (min-width: 640px) {
+  .sm_flex_row_landing_app_krediya {
+    flex-direction: row !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .md_text_6xl_landing_app_krediya {
+    font-size: 3.75rem !important;
+  }
+
+  .md_p_12_landing_app_krediya {
+    padding: 3rem !important;
+  }
+
+  .md_text_2xl_landing_app_krediya {
+    font-size: 1.5rem !important;
+  }
+
+  /* Card responsive classes - hidden md:block means hidden by default, block on md+ */
+  .hidden {
+    display: none !important;
+  }
+
+  .md\:block {
+    display: block !important;
+  }
+
+  /* block md:hidden means visible by default, hidden on md+ */
+  .md\:hidden {
+    display: none !important;
+  }
+}
+
+/* Card responsive - block md:hidden means visible on mobile, hidden on desktop */
+.block {
+  display: block !important;
+}
+
+@media (min-width: 768px) {
+  .block.md\:hidden {
+    display: none !important;
+  }
+}
