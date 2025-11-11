@@ -22,7 +22,10 @@ export default function CountdownTimer({ targetDate }: { targetDate: string }) {
 
   useEffect(() => {
     const calculateCountdown = () => {
-      const target = new Date(targetDate).getTime();
+      // Create target date at midnight local time
+      const [datePart] = targetDate.split("T");
+      const [year, month, day] = datePart.split("-").map(Number);
+      const target = new Date(year, month - 1, day, 0, 0, 0, 0).getTime();
       const now = new Date().getTime();
       const difference = target - now;
 
@@ -72,7 +75,7 @@ export default function CountdownTimer({ targetDate }: { targetDate: string }) {
   }
 
   return (
-    <div className="countdown_navidad_timer_wrapper">
+    <div>
       <div className="countdown_navidad_timer_grid">
         {[
           { value: countdown.days, label: "Días", key: "days" },

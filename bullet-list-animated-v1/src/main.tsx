@@ -1,11 +1,17 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App.tsx";
 import "./index.css";
+import App from "./App.tsx";
+
+// createRoot(document.getElementById("root")!).render(
+//   <StrictMode>
+//     <App />
+//   </StrictMode>
+// );
 
 document.addEventListener("DOMContentLoaded", () => {
   const roots = document.querySelectorAll(
-    "[data-react-root-grid-cards-effect-appear]"
+    "[data-react-root-bullet-list-animated-v1]"
   );
 
   roots.forEach((rootElement) => {
@@ -27,14 +33,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
-// import { StrictMode } from "react";
-// import { createRoot } from "react-dom/client";
-// import App from "./App.tsx";
-// import "./index.css";
-
-// createRoot(document.getElementById("root")!).render(
-//   <StrictMode>
-//     <App data={[]} />
-//   </StrictMode>
-// );

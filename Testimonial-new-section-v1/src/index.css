@@ -1,0 +1,229 @@
+/* Testimonials Section - Custom CSS Styles */
+/* All classes use suffix _landing_app_krediya */
+
+/* ===== TESTIMONIALS SECTION ===== */
+#testimonials_section_landing_app_krediya {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  background-color: #ffffff !important;
+}
+
+#testimonials_container_landing_app_krediya {
+  max-width: 72rem !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+#testimonials_header_landing_app_krediya {
+  text-align: center !important;
+  margin-bottom: 4rem !important;
+}
+
+#testimonials_title_landing_app_krediya {
+  font-size: 3rem !important;
+  font-weight: 700 !important;
+  color: #000000 !important;
+  margin-bottom: 1rem !important;
+}
+
+@media (min-width: 768px) {
+  #testimonials_title_landing_app_krediya {
+    font-size: 3.75rem !important;
+  }
+}
+
+#testimonials_subtitle_landing_app_krediya {
+  font-size: 1.25rem !important;
+  color: #4b5563 !important;
+}
+
+#testimonials_carousel_container_landing_app_krediya {
+  position: relative !important;
+}
+
+#testimonials_carousel_landing_app_krediya {
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 1rem !important;
+}
+
+#testimonials_card_landing_app_krediya {
+  padding: 2rem !important;
+  border-radius: 1rem !important;
+  background: linear-gradient(to bottom right, #f9fafb, #ffffff) !important;
+  border: 2px solid #f3f4f6 !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.3s ease !important;
+}
+
+#testimonials_card_landing_app_krediya:hover {
+  border-color: #2563eb !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+}
+
+@media (min-width: 768px) {
+  #testimonials_card_landing_app_krediya {
+    padding: 3rem !important;
+  }
+}
+
+#testimonials_stars_landing_app_krediya {
+  display: flex !important;
+  gap: 0.25rem !important;
+  margin-bottom: 1.5rem !important;
+  justify-content: center !important;
+}
+
+.testimonials_star_yellow_landing_app_krediya {
+  fill: #facc15 !important;
+  color: #facc15 !important;
+  stroke: #facc15 !important;
+  stroke-width: 0 !important;
+}
+
+#testimonials_text_landing_app_krediya {
+  color: #374151 !important;
+  font-size: 1.25rem !important;
+  margin-bottom: 2rem !important;
+  line-height: 1.75 !important;
+  text-align: center !important;
+  max-width: 48rem !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (min-width: 768px) {
+  #testimonials_text_landing_app_krediya {
+    font-size: 1.5rem !important;
+  }
+}
+
+#testimonials_author_landing_app_krediya {
+  border-top: 1px solid #e5e7eb !important;
+  padding-top: 1.5rem !important;
+}
+
+#testimonials_name_landing_app_krediya {
+  font-weight: 700 !important;
+  color: #000000 !important;
+  font-size: 1.25rem !important;
+  text-align: center !important;
+}
+
+#testimonials_role_landing_app_krediya {
+  font-size: 0.875rem !important;
+  color: #4b5563 !important;
+  text-align: center !important;
+  margin-top: 0.25rem !important;
+}
+
+#testimonials_nav_prev_landing_app_krediya {
+  position: absolute !important;
+  left: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) translateX(-1rem) !important;
+  background-color: #ffffff !important;
+  border-radius: 9999px !important;
+  padding: 0.75rem !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.3s ease !important;
+  border: 2px solid #f3f4f6 !important;
+  cursor: pointer !important;
+}
+
+@media (min-width: 768px) {
+  #testimonials_nav_prev_landing_app_krediya {
+    transform: translateY(-50%) translateX(-3rem) !important;
+  }
+}
+
+#testimonials_nav_prev_landing_app_krediya:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  transform: translateY(-50%) translateX(-1rem) scale(1.1) !important;
+  border-color: #2563eb !important;
+}
+
+@media (min-width: 768px) {
+  #testimonials_nav_prev_landing_app_krediya:hover {
+    transform: translateY(-50%) translateX(-3rem) scale(1.1) !important;
+  }
+}
+
+#testimonials_nav_next_landing_app_krediya {
+  position: absolute !important;
+  right: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) translateX(1rem) !important;
+  background-color: #ffffff !important;
+  border-radius: 9999px !important;
+  padding: 0.75rem !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.3s ease !important;
+  border: 2px solid #f3f4f6 !important;
+  cursor: pointer !important;
+}
+
+@media (min-width: 768px) {
+  #testimonials_nav_next_landing_app_krediya {
+    transform: translateY(-50%) translateX(3rem) !important;
+  }
+}
+
+#testimonials_nav_next_landing_app_krediya:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  transform: translateY(-50%) translateX(1rem) scale(1.1) !important;
+  border-color: #2563eb !important;
+}
+
+@media (min-width: 768px) {
+  #testimonials_nav_next_landing_app_krediya:hover {
+    transform: translateY(-50%) translateX(3rem) scale(1.1) !important;
+  }
+}
+
+#testimonials_nav_icon_landing_app_krediya,
+.testimonials_nav_icon_landing_app_krediya {
+  color: #374151 !important;
+}
+
+#testimonials_dots_landing_app_krediya {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  margin-top: 2rem !important;
+}
+
+.testimonials_dot_landing_app_krediya {
+  transition: all 0.3s ease !important;
+  border-radius: 9999px !important;
+  cursor: pointer !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.testimonials_dot_active_landing_app_krediya {
+  width: 2rem !important;
+  height: 0.75rem !important;
+  background-color: #2563eb !important;
+  border-radius: 9999px !important;
+}
+
+.testimonials_dot_inactive_landing_app_krediya {
+  width: 0.75rem !important;
+  height: 0.75rem !important;
+  background-color: #d1d5db !important;
+  border-radius: 9999px !important;
+}
+
+.testimonials_dot_inactive_landing_app_krediya:hover {
+  background-color: #9ca3af !important;
+}

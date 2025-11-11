@@ -1,10 +1,10 @@
 {
-  "name": "countdown-navidad",
+  "name": "step-by-step-bullets-krdya",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host",
+    "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -17,6 +17,7 @@
     "lucide-react": "^0.548.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-player": "^3.3.3",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.16"
   },

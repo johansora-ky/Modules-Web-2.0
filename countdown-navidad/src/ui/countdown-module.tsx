@@ -68,18 +68,25 @@ export default function CountdownModule() {
           <div className="countdown_navidad_left_column">
             <div className="countdown_navidad_text_container">
               <h2 className="countdown_navidad_title">
-                ¿Qué harías si un regalo pudiera cambiar algo más que tu
-                Navidad?
+                Conoce lo facil que es cambiar tu navidad con KrediYA
               </h2>
 
               <p className="countdown_navidad_description">
-                Descubre la innovación que transformará tu experiencia con
-                KrediYa.
+                Aprobamos tu crédito solo con tu documento.
+                <br />
+                Accede a tu crédito en minutos.
+                <br />
+                Sin papeleos ni procesos complicados
+                <br />
+                Financia celulares y muchos otros productos más
+                <br />
+                Una pequeña cuota inicial
               </p>
 
               <div className="countdown_navidad_register_section">
                 <p className="countdown_navidad_register_text">
-                  Regístrate y entérate antes que los demás
+                  Regístrate y se el primero en conocer nuestras ofertas
+                  navideñas
                 </p>
               </div>
             </div>
@@ -109,7 +116,7 @@ export default function CountdownModule() {
             </div>
 
             <div className="countdown_navidad_timer_container">
-              <CountdownTimer targetDate="2025-12-17" />
+              <CountdownTimer targetDate="2025-11-17T00:00:00" />
             </div>
           </div>
         </div>

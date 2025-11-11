@@ -283,13 +283,13 @@
 
 @media (min-width: 640px) {
   .countdown_navidad_headline_shadow {
-    font-size: 3rem !important;
+    font-size: 5rem !important;
   }
 }
 
 @media (min-width: 1024px) {
   .countdown_navidad_headline_shadow {
-    font-size: 3.75rem !important;
+    font-size: 6rem !important;
   }
 }
 
@@ -308,13 +308,13 @@
 
 @media (min-width: 640px) {
   .countdown_navidad_headline_main {
-    font-size: 3rem !important;
+    font-size: 5rem !important;
   }
 }
 
 @media (min-width: 1024px) {
   .countdown_navidad_headline_main {
-    font-size: 3.75rem !important;
+    font-size: 6rem !important;
   }
 }
 
@@ -326,17 +326,6 @@
 @media (min-width: 1024px) {
   .countdown_navidad_timer_container {
     justify-content: flex-start !important;
-  }
-}
-
-/* Countdown Timer Styles */
-.countdown_navidad_timer_wrapper {
-  padding: 2rem 0 !important;
-}
-
-@media (min-width: 640px) {
-  .countdown_navidad_timer_wrapper {
-    padding: 3rem 0 !important;
   }
 }
 
@@ -606,6 +595,8 @@
   object-fit: cover !important;
   object-position: top center !important;
   margin-bottom: -150px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .countdown_navidad_top_full_width_image {
@@ -647,6 +638,286 @@
 @media (min-width: 1024px) {
   .countdown_navidad_corner_image {
     max-width: 500px !important;
+  }
+}
+
+.countdown_navidad_timer_wrapper {
+  width: 100% !important;
+  padding: 2.25rem 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.countdown_navidad_timer_grid {
+  width: 100% !important;
+  justify-items: center !important;
+}
+
+.countdown_navidad_box_container {
+  width: 100% !important;
+  max-width: 12rem !important;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 1280px) {
+  #countdown_navidad_top_full_width {
+    width: 90% !important;
+  }
+
+  .countdown_navidad_corner_image {
+    max-width: 420px !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  #countdown_navidad_main_container {
+    align-items: flex-start !important;
+    padding-bottom: 4rem !important;
+  }
+
+  #countdown_navidad_right_section {
+    left: 0 !important;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.98),
+      rgba(255, 255, 255, 0.97),
+      rgba(255, 255, 255, 0.92)
+    ) !important;
+  }
+
+  #countdown_navidad_left_section {
+    top: auto !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 58% !important;
+    z-index: 6 !important;
+    border-top-left-radius: 32px !important;
+    border-top-right-radius: 32px !important;
+    background: linear-gradient(to bottom right, #e10623, #c70220) !important;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  #countdown_navidad_content_container {
+    padding: 5rem 1.75rem 3.5rem !important;
+    max-width: 58rem !important;
+  }
+
+  .countdown_navidad_grid {
+    gap: 2.75rem !important;
+  }
+
+  .countdown_navidad_left_column,
+  .countdown_navidad_right_column {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .countdown_navidad_text_container,
+  .countdown_navidad_header_container {
+    align-items: center !important;
+  }
+
+  .countdown_navidad_title,
+  .countdown_navidad_description,
+  .countdown_navidad_register_text,
+  .countdown_navidad_complete_title,
+  .countdown_navidad_complete_text {
+    text-align: center !important;
+  }
+
+  .countdown_navidad_headline_container {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 24rem !important;
+  }
+
+  .countdown_navidad_headline_shadow,
+  .countdown_navidad_headline_main {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .countdown_navidad_timer_container {
+    justify-content: center !important;
+  }
+
+  .countdown_navidad_timer_grid {
+    max-width: 28rem !important;
+    padding: 0 0.75rem !important;
+  }
+
+  .countdown_navidad_corner_image {
+    opacity: 0.65 !important;
+    max-width: 320px !important;
+  }
+
+  #countdown_navidad_top_full_width {
+    top: -40px !important;
+    bottom: auto !important;
+    right: auto !important;
+    left: 50% !important;
+    width: 120% !important;
+    transform: translateX(-50%) rotate(180deg) !important;
+    margin-bottom: 0 !important;
+  }
+
+  .countdown_navidad_box_container {
+    max-width: 10.5rem !important;
+  }
+
+  .countdown_navidad_timer_wrapper {
+    padding: 2.5rem 0 1.75rem !important;
+  }
+
+  .countdown_navidad_left_column {
+    padding: 2.25rem 1.75rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #countdown_navidad_content_container {
+    padding: 4.75rem 1.5rem 3rem !important;
+  }
+
+  .countdown_navidad_grid {
+    gap: 2.25rem !important;
+  }
+
+  .countdown_navidad_title {
+    font-size: 1.625rem !important;
+  }
+
+  .countdown_navidad_description {
+    font-size: 1rem !important;
+  }
+
+  .countdown_navidad_corner_image {
+    max-width: 260px !important;
+    opacity: 0.5 !important;
+  }
+
+  #countdown_navidad_top_full_width {
+    width: 135% !important;
+    top: -30px !important;
+  }
+
+  #countdown_navidad_left_section {
+    height: 62% !important;
+  }
+
+  .countdown_navidad_timer_grid {
+    max-width: 24rem !important;
+    gap: 0.65rem !important;
+  }
+
+  .countdown_navidad_box_container {
+    max-width: 9.5rem !important;
+  }
+
+  .countdown_navidad_box {
+    padding: 1rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  #countdown_navidad_content_container {
+    padding: 4.5rem 1.25rem 2.75rem !important;
+  }
+
+  .countdown_navidad_grid {
+    gap: 2rem !important;
+  }
+
+  .countdown_navidad_title {
+    font-size: 1.45rem !important;
+  }
+
+  .countdown_navidad_description {
+    font-size: 0.95rem !important;
+  }
+
+  .countdown_navidad_register_text {
+    font-size: 0.75rem !important;
+  }
+
+  .countdown_navidad_headline_shadow,
+  .countdown_navidad_headline_main {
+    font-size: 3rem !important;
+  }
+
+  #countdown_navidad_top_full_width {
+    width: 160% !important;
+    top: -20px !important;
+  }
+
+  #countdown_navidad_left_section {
+    height: 68% !important;
+  }
+
+  .countdown_navidad_corner_image {
+    max-width: 200px !important;
+    opacity: 0.4 !important;
+  }
+
+  .countdown_navidad_timer_grid {
+    gap: 0.5rem !important;
+  }
+
+  .countdown_navidad_box_container {
+    max-width: 8.75rem !important;
+  }
+
+  .countdown_navidad_box_value {
+    font-size: 1.75rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #countdown_navidad_content_container {
+    padding: 3rem 1rem 2.5rem !important;
+  }
+
+  .countdown_navidad_corner_image {
+    display: none !important;
+  }
+
+  #countdown_navidad_top_full_width {
+    width: 180% !important;
+    top: -10px !important;
+    opacity: 0.45 !important;
+  }
+
+  #countdown_navidad_left_section {
+    height: 50% !important;
+  }
+
+  .countdown_navidad_headline_shadow,
+  .countdown_navidad_headline_main {
+    font-size: 2.5rem !important;
+  }
+
+  .countdown_navidad_box_container {
+    max-width: 7.75rem !important;
+  }
+
+  .countdown_navidad_box {
+    padding: 0.85rem !important;
+  }
+
+  .countdown_navidad_box_label {
+    font-size: 0.7rem !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .countdown_navidad_timer_grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .countdown_navidad_box_container {
+    max-width: 100% !important;
   }
 }
 
