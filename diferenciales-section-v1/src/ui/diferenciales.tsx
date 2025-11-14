@@ -1,15 +1,22 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { motion } from "framer-motion"
-import { CheckCircle, Zap, CreditCard, Shield, TrendingUp, Smartphone } from "lucide-react"
+import { motion } from "framer-motion";
+import {
+  CheckCircle,
+  Zap,
+  CreditCard,
+  Shield,
+  TrendingUp,
+  Smartphone,
+} from "lucide-react";
 
 interface DiferencialCard {
-  id: number
-  icon: React.ReactNode
-  title: string
-  description: string
+  id: number;
+  icon: React.ReactNode;
+  title: string;
+  description: string;
 }
 
 const diferencialesData: DiferencialCard[] = [
@@ -43,7 +50,7 @@ const diferencialesData: DiferencialCard[] = [
     title: "No necesitas score crediticio",
     description: "Acceso sin barreras de historial crediticio tradicional",
   },
-]
+];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -54,7 +61,7 @@ const containerVariants = {
       delayChildren: 0.2,
     },
   },
-}
+};
 
 const cardVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -74,11 +81,11 @@ const cardVariants = {
       ease: "easeOut",
     },
   },
-}
+};
 
 export function Diferenciales() {
   return (
-    <section className="w-full bg-white py-20 px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-white px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -88,8 +95,12 @@ export function Diferenciales() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-black mb-4">Conoce nuestros diferenciales</h2>
-          <p className="text-lg text-gray-600">Beneficios que hacen la diferencia en tu experiencia con KrediYa.</p>
+          <h2 className="text-4xl sm:text-5xl font-bold text-black mb-4">
+            Conoce nuestros diferenciales
+          </h2>
+          <p className="text-lg text-gray-600">
+            Beneficios que hacen la diferencia en tu experiencia con KrediYa.
+          </p>
         </motion.div>
 
         {/* Cards Grid */}
@@ -101,7 +112,12 @@ export function Diferenciales() {
           viewport={{ once: true }}
         >
           {diferencialesData.map((item) => (
-            <motion.div key={item.id} className="group relative" variants={cardVariants} whileHover="hover">
+            <motion.div
+              key={item.id}
+              className="group relative"
+              variants={cardVariants}
+              whileHover="hover"
+            >
               <div className="h-full p-8 rounded-2xl border-2 border-gray-100 bg-white transition-all duration-300 hover:border-[#004EBC] cursor-pointer">
                 {/* Icon Container */}
                 <div className="mb-6">
@@ -111,8 +127,12 @@ export function Diferenciales() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold text-black mb-3">{item.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                <h3 className="text-xl font-bold text-black mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {item.description}
+                </p>
 
                 {/* Accent Line */}
                 <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-[#004EBC] to-[#E60026] rounded-full w-0 group-hover:w-full transition-all duration-500" />
@@ -131,10 +151,12 @@ export function Diferenciales() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-[#004EBC]/20">
             <CheckCircle className="w-5 h-5 text-[#004EBC]" />
-            <span className="text-sm font-medium text-[#004EBC]">Más de 50,000 clientes satisfechos</span>
+            <span className="text-sm font-medium text-[#004EBC]">
+              Más de 50,000 clientes satisfechos
+            </span>
           </div>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

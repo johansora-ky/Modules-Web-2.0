@@ -1,0 +1,363 @@
+#hero-banner-container_mas_alla_del_cielo {
+  position: relative !important;
+  width: 100% !important;
+  overflow: hidden !important;
+  background: linear-gradient(
+    to bottom right,
+    #1e1b4b,
+    #581c87,
+    #0f172a
+  ) !important;
+}
+
+#hero-banner-canvas_mas_alla_del_cielo {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#hero-banner-gradient-overlay-1_mas_alla_del_cielo {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  background: linear-gradient(
+    to right,
+    rgba(30, 27, 75, 0.8),
+    rgba(88, 28, 135, 0.4),
+    rgba(15, 23, 42, 0.8)
+  ) !important;
+}
+
+#hero-banner-gradient-overlay-2_mas_alla_del_cielo {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  opacity: 0.5 !important;
+}
+
+#hero-banner-gradient-overlay-3_mas_alla_del_cielo {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  opacity: 0.3 !important;
+}
+
+#hero-banner-content-container_mas_alla_del_cielo {
+  position: relative !important;
+  z-index: 10 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 1280px !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+@media (min-width: 640px) {
+  #hero-banner-content-container_mas_alla_del_cielo {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  #hero-banner-content-container_mas_alla_del_cielo {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+}
+
+#hero-banner-grid_mas_alla_del_cielo {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  align-items: center !important;
+}
+
+@media (min-width: 1024px) {
+  #hero-banner-grid_mas_alla_del_cielo {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 48px !important;
+  }
+}
+
+#hero-banner-logo-mobile_mas_alla_del_cielo {
+  display: flex !important;
+  justify-content: center !important;
+  order: 1 !important;
+}
+
+@media (min-width: 1024px) {
+  #hero-banner-logo-mobile_mas_alla_del_cielo {
+    display: none !important;
+  }
+}
+
+#hero-banner-logo-mobile-img_mas_alla_del_cielo {
+  height: 300px !important;
+  object-fit: contain !important;
+}
+
+@media (min-width: 640px) {
+  #hero-banner-logo-mobile-img_mas_alla_del_cielo {
+    height: 100px !important;
+  }
+}
+
+#hero-banner-astronaut-mobile_mas_alla_del_cielo {
+  position: relative !important;
+  height: 384px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  order: 2 !important;
+  margin-bottom: 100px !important;
+}
+
+@media (min-width: 640px) {
+  #hero-banner-astronaut-mobile_mas_alla_del_cielo {
+    height: 500px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  #hero-banner-astronaut-mobile_mas_alla_del_cielo {
+    display: none !important;
+  }
+}
+
+#hero-banner-astronaut-mobile-inner_mas_alla_del_cielo {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#hero-banner-astronaut-mobile-center_mas_alla_del_cielo {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 10 !important;
+}
+
+#hero-banner-astronaut-mobile-img_mas_alla_del_cielo {
+  max-width: 1024px !important;
+  height: auto !important;
+  object-fit: contain !important;
+  width: auto !important;
+}
+
+#hero-banner-text-section_mas_alla_del_cielo {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 32px !important;
+  text-align: center !important;
+  order: 3 !important;
+}
+
+@media (min-width: 1024px) {
+  #hero-banner-text-section_mas_alla_del_cielo {
+    text-align: left !important;
+    order: 1 !important;
+  }
+}
+
+#hero-banner-headline-container_mas_alla_del_cielo {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+}
+
+#hero-banner-headline_mas_alla_del_cielo {
+  font-size: 48px !important;
+  font-weight: 900 !important;
+  color: white !important;
+  line-height: 1.25 !important;
+  text-wrap: pretty !important;
+}
+
+@media (min-width: 640px) {
+  #hero-banner-headline_mas_alla_del_cielo {
+    font-size: 60px !important;
+  }
+}
+
+#hero-banner-subtitle_mas_alla_del_cielo {
+  font-size: 20px !important;
+  color: #d1d5db !important;
+  line-height: 1.75 !important;
+  max-width: 448px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (min-width: 1024px) {
+  #hero-banner-subtitle_mas_alla_del_cielo {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+#hero-banner-cta-container_mas_alla_del_cielo {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+@media (min-width: 1024px) {
+  #hero-banner-cta-container_mas_alla_del_cielo {
+    justify-content: flex-start !important;
+  }
+}
+
+#hero-banner-cta-button_mas_alla_del_cielo {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+  background-color: #dc2626 !important;
+  color: white !important;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+  border-radius: 16px !important;
+  transition: background-color 200ms !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+#hero-banner-cta-button_mas_alla_del_cielo:hover {
+  background-color: #b91c1c !important;
+  box-shadow: 0 10px 15px -3px rgba(220, 38, 38, 0.5),
+    0 4px 6px -2px rgba(220, 38, 38, 0.5) !important;
+}
+
+#hero-banner-disclaimer_mas_alla_del_cielo {
+  font-size: 12px !important;
+  color: #6b7280 !important;
+}
+
+#hero-banner-desktop-section_mas_alla_del_cielo {
+  display: none !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 32px !important;
+  order: 2 !important;
+}
+
+@media (min-width: 1024px) {
+  #hero-banner-desktop-section_mas_alla_del_cielo {
+    display: flex !important;
+    height: 100% !important;
+    position: relative !important;
+  }
+}
+
+#hero-banner-logo-desktop_mas_alla_del_cielo {
+  display: none !important;
+}
+
+@media (min-width: 1024px) {
+  #hero-banner-logo-desktop_mas_alla_del_cielo {
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 50 !important;
+  }
+}
+
+#hero-banner-logo-desktop-img_mas_alla_del_cielo {
+  height: 120px !important;
+  object-fit: contain !important;
+}
+
+@media (min-width: 1280px) {
+  #hero-banner-logo-desktop-img_mas_alla_del_cielo {
+    height: 152px !important;
+  }
+}
+
+#hero-banner-astronaut-desktop_mas_alla_del_cielo {
+  position: relative !important;
+  width: 100% !important;
+  height: 500px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+@media (min-width: 1280px) {
+  #hero-banner-astronaut-desktop_mas_alla_del_cielo {
+    height: 600px !important;
+  }
+}
+
+#hero-banner-astronaut-desktop-inner_mas_alla_del_cielo {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+}
+
+#hero-banner-astronaut-desktop-center_mas_alla_del_cielo {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 10 !important;
+}
+
+#hero-banner-astronaut-desktop-img_mas_alla_del_cielo {
+  width: 100% !important;
+  max-width: 448px !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+@media (min-width: 1280px) {
+  #hero-banner-astronaut-desktop-img_mas_alla_del_cielo {
+    max-width: 512px !important;
+  }
+}
+
+#hero-banner-bottom-gradient_mas_alla_del_cielo {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 128px !important;
+  background: linear-gradient(to top, #0f172a, transparent) !important;
+  pointer-events: none !important;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}

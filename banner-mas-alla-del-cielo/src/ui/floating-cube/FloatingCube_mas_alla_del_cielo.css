@@ -1,0 +1,11 @@
+#floating-cube-container_mas_alla_del_cielo {
+  position: absolute !important;
+  transition: transform 75ms ease-linear !important;
+}
+
+#floating-cube-image_mas_alla_del_cielo {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+

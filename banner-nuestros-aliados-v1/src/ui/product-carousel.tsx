@@ -1,24 +1,155 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useMemo } from "react";
+import "./product-carousel_nuestros_aliados.css";
 
 interface Product {
-  id: string
-  name: string
-  image: string
+  id: string;
+  name: string;
+  image: string;
+  category: string;
 }
 
 const PRODUCTS: Product[] = [
-  { id: "1", name: "Smartphone", image: "/premium-smartphone.jpg" },
-  { id: "2", name: "Laptop", image: "/modern-laptop.png" },
-  { id: "3", name: "Headphones", image: "/wireless-headphones.png" },
-  { id: "4", name: "Tablet", image: "/digital-tablet.jpg" },
-  { id: "5", name: "Camera", image: "/professional-camera.png" },
-  { id: "6", name: "Watch", image: "/smartwatch-lifestyle.png" },
-]
+  {
+    id: "1",
+    name: "Smartphone",
+    category: "Home",
+    image:
+      "https://www.krediya.com/hubfs/Im%C3%A1genes%20optimizadas%20en%20web%20-%20Nuevos%20sitios/nevera.png?width=860&t=1763127083940",
+  },
+  {
+    id: "2",
+    name: "Laptop",
+    category: "Home",
+    image:
+      "https://www.krediya.com/hubfs/Im%C3%A1genes%20optimizadas%20en%20web%20-%20Nuevos%20sitios/image.png?width=860&t=1763127084258",
+  },
+  {
+    id: "3",
+    name: "Headphones",
+    category: "Health",
+    image:
+      "https://www.krediya.com/hubfs/Im%C3%A1genes%20optimizadas%20en%20web%20-%20Nuevos%20sitios/salud%20visual.png?width=860&t=1763127084155",
+  },
+  {
+    id: "4",
+    name: "Tablet",
+    category: "Home",
+    image:
+      "https://www.krediya.com/hubfs/Im%C3%A1genes%20optimizadas%20en%20web%20-%20Nuevos%20sitios/lavadora.png?width=860&t=1763127084215",
+  },
+  {
+    id: "5",
+    name: "Camera",
+    category: "Home",
+    image:
+      "https://www.krediya.com/hubfs/Im%C3%A1genes%20optimizadas%20en%20web%20-%20Nuevos%20sitios/estufa.png?width=860&t=1763127084404",
+  },
+  {
+    id: "6",
+    name: "Watch",
+    category: "Home",
+    image:
+      "https://www.krediya.com/hubfs/Im%C3%A1genes%20optimizadas%20en%20web%20-%20Nuevos%20sitios/mobiliario.png?width=860&t=1763127084260",
+  },
+  {
+    id: "7",
+    name: "Watch",
+    category: "Technology",
+    image:
+      "https://www.krediya.com/hubfs/Im%C3%A1genes%20optimizadas%20en%20web%20-%20Nuevos%20sitios/laptop.png?width=860&t=1763127084443",
+  },
+  {
+    id: "8",
+    name: "Watch",
+    category: "Technology",
+    image:
+      "https://www.krediya.com/hubfs/Im%C3%A1genes%20optimizadas%20en%20web%20-%20Nuevos%20sitios/Smartphone.png?width=860&t=1763127084386",
+  },
+  {
+    id: "9",
+    name: "Watch",
+    category: "Technology",
+    image:
+      "https://www.krediya.com/hubfs/Im%C3%A1genes%20optimizadas%20en%20web%20-%20Nuevos%20sitios/tablet.png?width=860&t=1763127084454",
+  },
+  {
+    id: "10",
+    name: "Watch",
+    category: "LB",
+    image:
+      "https://www.krediya.com/hubfs/Im%C3%A1genes%20optimizadas%20en%20web%20-%20Nuevos%20sitios/tv.png?width=860&t=1763127084753",
+  },
+  {
+    id: "11",
+    name: "Watch",
+    category: "LB",
+    image:
+      "https://www.krediya.com/hubfs/Im%C3%A1genes%20optimizadas%20en%20web%20-%20Nuevos%20sitios/scooter.png?width=860&t=1763134836079",
+  },
+  {
+    id: "12",
+    name: "Watch",
+    category: "LB",
+    image:
+      "https://www.krediya.com/hubfs/Im%C3%A1genes%20optimizadas%20en%20web%20-%20Nuevos%20sitios/Speaker.png?width=860&t=1763134836018",
+  },
+  {
+    id: "13",
+    name: "Watch",
+    category: "LB",
+    image:
+      "https://www.krediya.com/hubfs/Im%C3%A1genes%20optimizadas%20en%20web%20-%20Nuevos%20sitios/Air%20Fryer.png?width=860&t=1763134836083",
+  },
+  {
+    id: "14",
+    name: "Watch",
+    category: "LB",
+    image:
+      "https://www.krediya.com/hubfs/Im%C3%A1genes%20optimizadas%20en%20web%20-%20Nuevos%20sitios/bike.png?width=860&t=1763134836090",
+  },
+  {
+    id: "15",
+    name: "Watch",
+    category: "LB",
+    image:
+      "https://www.krediya.com/hubfs/Im%C3%A1genes%20optimizadas%20en%20web%20-%20Nuevos%20sitios/Smartwatch.png?width=860&t=1763134836277",
+  },
+];
+
+// Divide products into groups in order (5 products per row)
+function divideProductsIntoGroups<T>(
+  products: T[],
+  numberOfGroups: number = 3
+): T[][] {
+  const groups: T[][] = [];
+  const productsPerGroup = Math.ceil(products.length / numberOfGroups);
+
+  for (let i = 0; i < numberOfGroups; i++) {
+    const start = i * productsPerGroup;
+    const end = Math.min(start + productsPerGroup, products.length);
+    groups.push(products.slice(start, end));
+  }
+
+  return groups;
+}
+
+// Create extended array from a product group for seamless scrolling (no shuffling)
+function createExtendedArrayFromGroup<T>(group: T[], copies: number = 4): T[] {
+  // Create extended array with multiple copies in order
+  const extended: T[] = [];
+  for (let i = 0; i < copies; i++) {
+    extended.push(...group);
+  }
+
+  return extended;
+}
 
 export function ProductCarousel() {
-  const [sparkles, setSparkles] = useState<Array<{ id: number; x: number; y: number }>>([])
+  const [sparkles, setSparkles] = useState<
+    Array<{ id: number; x: number; y: number }>
+  >([]);
 
   useEffect(() => {
     // Generate sparkles randomly
@@ -27,28 +158,45 @@ export function ProductCarousel() {
         id: Math.random(),
         x: Math.random() * 100,
         y: Math.random() * 100,
-      }
-      setSparkles((prev) => [...prev, newSparkle])
+      };
+      setSparkles((prev) => [...prev, newSparkle]);
 
       // Remove sparkle after animation
       setTimeout(() => {
-        setSparkles((prev) => prev.filter((s) => s.id !== newSparkle.id))
-      }, 1500)
-    }, 300)
+        setSparkles((prev) => prev.filter((s) => s.id !== newSparkle.id));
+      }, 1500);
+    }, 300);
 
-    return () => clearInterval(interval)
-  }, [])
+    return () => clearInterval(interval);
+  }, []);
 
-  // Duplicate products for seamless loop
-  const extendedProducts = [...PRODUCTS, ...PRODUCTS]
+  // Divide products into 3 groups in order (5 products per row)
+  // Using useMemo to ensure arrays are only generated once on mount
+  const productGroups = useMemo(() => {
+    // Divide into 3 groups of 5 products each in order
+    return divideProductsIntoGroups(PRODUCTS, 3);
+  }, []);
+
+  // Create extended arrays for each row from their respective groups
+  const extendedProducts1 = useMemo(() => {
+    return createExtendedArrayFromGroup(productGroups[0], 4);
+  }, [productGroups]);
+
+  const extendedProducts2 = useMemo(() => {
+    return createExtendedArrayFromGroup(productGroups[1], 4);
+  }, [productGroups]);
+
+  const extendedProducts3 = useMemo(() => {
+    return createExtendedArrayFromGroup(productGroups[2], 4);
+  }, [productGroups]);
 
   return (
-    <div className="w-full max-w-2xl mx-auto relative">
+    <div id="product-carousel-container_nuestros_aliados">
       {/* Sparkle Effects */}
       {sparkles.map((sparkle) => (
         <div
           key={sparkle.id}
-          className="absolute pointer-events-none animate-sparkle"
+          className="product-carousel-sparkle_nuestros_aliados animate-sparkle_nuestros_aliados"
           style={{
             left: `${sparkle.x}%`,
             top: `${sparkle.y}%`,
@@ -62,110 +210,55 @@ export function ProductCarousel() {
       ))}
 
       {/* Row 1 - Left to Right */}
-      <div className="mb-4 overflow-hidden rounded-lg relative">
-        <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-[#e10623] to-transparent z-10 pointer-events-none rounded-l-lg"></div>
-        <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-[#e10623] to-transparent z-10 pointer-events-none rounded-r-lg"></div>
-        <div className="flex animate-scroll-left gap-4">
-          {extendedProducts.map((product, idx) => (
+      <div className="product-carousel-row_nuestros_aliados">
+        <div className="product-carousel-gradient-left_nuestros_aliados"></div>
+        <div className="product-carousel-gradient-right_nuestros_aliados"></div>
+        <div className="product-carousel-scroll-left_nuestros_aliados animate-scroll-left_nuestros_aliados">
+          {extendedProducts1.map((product, idx) => (
             <ProductCard key={`row1-${idx}`} product={product} />
           ))}
         </div>
       </div>
 
       {/* Row 2 - Right to Left */}
-      <div className="mb-4 overflow-hidden rounded-lg relative">
-        <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-[#e10623] to-transparent z-10 pointer-events-none rounded-l-lg"></div>
-        <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-[#e10623] to-transparent z-10 pointer-events-none rounded-r-lg"></div>
-        <div className="flex animate-scroll-right gap-4">
-          {extendedProducts.map((product, idx) => (
+      <div className="product-carousel-row_nuestros_aliados">
+        <div className="product-carousel-gradient-left_nuestros_aliados"></div>
+        <div className="product-carousel-gradient-right_nuestros_aliados"></div>
+        <div className="product-carousel-scroll-right_nuestros_aliados animate-scroll-right_nuestros_aliados">
+          {extendedProducts2.map((product, idx) => (
             <ProductCard key={`row2-${idx}`} product={product} />
           ))}
         </div>
       </div>
 
       {/* Row 3 - Left to Right */}
-      <div className="overflow-hidden rounded-lg relative">
-        <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-[#e10623] to-transparent z-10 pointer-events-none rounded-l-lg"></div>
-        <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-[#e10623] to-transparent z-10 pointer-events-none rounded-r-lg"></div>
-        <div className="flex animate-scroll-left gap-4">
-          {extendedProducts.map((product, idx) => (
+      <div className="product-carousel-row-last_nuestros_aliados">
+        <div className="product-carousel-gradient-left_nuestros_aliados"></div>
+        <div className="product-carousel-gradient-right_nuestros_aliados"></div>
+        <div className="product-carousel-scroll-left_nuestros_aliados animate-scroll-left_nuestros_aliados">
+          {extendedProducts3.map((product, idx) => (
             <ProductCard key={`row3-${idx}`} product={product} />
           ))}
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes scrollLeft {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        @keyframes scrollRight {
-          0% {
-            transform: translateX(-50%);
-          }
-          100% {
-            transform: translateX(0);
-          }
-        }
-
-        @keyframes sparkle {
-          0% {
-            opacity: 1;
-            transform: scale(1);
-          }
-          50% {
-            opacity: 0.8;
-            transform: scale(0.8);
-          }
-          100% {
-            opacity: 0;
-            transform: scale(0);
-          }
-        }
-
-        .animate-scroll-left {
-          animation: scrollLeft 30s linear infinite;
-        }
-
-        .animate-scroll-right {
-          animation: scrollRight 30s linear infinite;
-        }
-
-        .animate-sparkle {
-          animation: sparkle 1.5s ease-in-out forwards;
-        }
-      `}</style>
     </div>
-  )
+  );
 }
 
 interface ProductCardProps {
-  product: Product
+  product: Product;
 }
 
 function ProductCard({ product }: ProductCardProps) {
   return (
-    <div
-      className="flex-shrink-0 w-40 h-40 rounded-xl p-4 flex items-center justify-center transition-all duration-300 hover:shadow-2xl group cursor-pointer"
-      style={{
-        background: "rgba(255, 255, 255, 0.50)",
-        backdropFilter: "blur(10px)",
-        border: "1px solid rgba(255, 255, 255, 0.2)",
-      }}
-    >
-      <div className="w-full h-full flex flex-col items-center justify-center">
+    <div className="product-card_nuestros_aliados">
+      <div className="product-card-inner_nuestros_aliados">
         <img
           src={product.image || "/placeholder.svg"}
           alt={product.name}
-          className="w-28 h-28 object-contain mb-2 transition-transform group-hover:scale-110 duration-300"
+          className="product-image_nuestros_aliados"
         />
-        <p className="text-sm font-semibold text-white text-center drop-shadow-md">{product.name}</p>
       </div>
     </div>
-  )
+  );
 }
