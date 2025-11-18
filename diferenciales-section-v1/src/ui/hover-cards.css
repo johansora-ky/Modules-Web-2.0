@@ -1,0 +1,140 @@
+/* Diferenciales Section Styles - Pure CSS with _diferenciales_section suffix */
+
+#section_diferenciales_section {
+  padding: 80px 16px;
+  background-color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  #section_diferenciales_section {
+    padding: 80px 32px;
+  }
+}
+
+#container_diferenciales_section {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+#cards_wrapper_diferenciales_section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+
+.card-container_diferenciales_section {
+  width: 300px !important;
+  height: 300px !important;
+  position: relative !important;
+  border-radius: 10px !important;
+  box-shadow: 0 10px 20px rgba(0, 78, 188, 0.15) !important;
+  overflow: hidden !important;
+}
+
+.card_diferenciales_section {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: inherit !important;
+  position: relative !important;
+}
+
+.card_bg_image_diferenciales_section {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-size: cover !important;
+  background-position: center !important;
+  border-radius: 10px !important;
+}
+
+.card_overlay_diferenciales_section {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  border-radius: 10px !important;
+}
+
+.front-content_diferenciales_section {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1) !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.front-content_diferenciales_section p {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  opacity: 1 !important;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1) !important;
+  text-align: center !important;
+  padding: 0 16px !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+}
+
+@media (min-width: 768px) {
+  .front-content_diferenciales_section p {
+    font-size: 30px !important;
+  }
+}
+
+.content_diferenciales_section {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  gap: 15px !important;
+  background: linear-gradient(0deg, #e60026 0%, rgba(230, 0, 38, 0.62) 100%) !important;
+  color: #ffffff !important;
+  padding: 24px !important;
+  line-height: 1.6 !important;
+  border-radius: 10px !important;
+  pointer-events: none !important;
+  transform: translateY(-96%) !important;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1) !important;
+  z-index: 3 !important;
+}
+
+.content_diferenciales_section .heading_diferenciales_section {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.5px !important;
+  margin: 0 !important;
+}
+
+.content_diferenciales_section p:not(.heading_diferenciales_section) {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+.card_diferenciales_section:hover .content_diferenciales_section {
+  transform: translateY(0) !important;
+}
+
+.card_diferenciales_section:hover .front-content_diferenciales_section {
+  transform: translateY(30%) !important;
+}
+
+.card_diferenciales_section:hover .front-content_diferenciales_section p {
+  opacity: 0 !important;
+}
+
+
