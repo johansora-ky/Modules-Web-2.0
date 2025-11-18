@@ -33,7 +33,7 @@ const locations: Location[] = [
       "https://www-krediya-com.sandbox.hs-sites.com/hs-fs/hubfs/82c57f2a9c2fcb5eb1c8d115f1fd3e7402d25d9b-1.png?width=1920&name=82c57f2a9c2fcb5eb1c8d115f1fd3e7402d25d9b-1.png",
     imageUrlMobile:
       "https://www-krediya-com.sandbox.hs-sites.com/hs-fs/hubfs/23e9bb4541260ea22a16175d73515b34c8a9a2a6.png?width=1080&name=23e9bb4541260ea22a16175d73515b34c8a9a2a6.png",
-    flag: "https://flagcdn.com/48x36/co.png",
+    flag: "//app.hubspot.com/api/filemanager/api/v3/files/thumbnail-redirect/200084837775?size=thumb&portalId=22317019&errorOnPlaceholder=true&t=1763475830272&hs_static_app=FileManagerDashboard&hs_static_app_version=static-1.37748",
   },
   {
     name: "Estados Unidos",
@@ -41,7 +41,7 @@ const locations: Location[] = [
     coordinates: [-95.7129, 37.0902],
     description:
       "La economía más grande del mundo con un sector financiero altamente desarrollado.",
-    flag: "https://flagcdn.com/48x36/us.png",
+    flag: "//app.hubspot.com/api/filemanager/api/v3/files/thumbnail-redirect/200085666323?size=medium&portalId=22317019&errorOnPlaceholder=true&t=1763475593685&hs_static_app=FileManagerDashboard&hs_static_app_version=static-1.37748",
     imageUrlDesktop:
       "https://www-krediya-com.sandbox.hs-sites.com/hs-fs/hubfs/Remesa_panama_EEUU_Tabla_POPUP_horz.png?width=1920&name=Remesa_panama_EEUU_Tabla_POPUP_horz.png",
     imageUrlMobile:
@@ -53,7 +53,7 @@ const locations: Location[] = [
     coordinates: [-85.2072, 12.8654],
     description:
       "Mercado en crecimiento con oportunidades en servicios financieros.",
-    flag: "https://flagcdn.com/48x36/ni.png",
+    flag: "//app.hubspot.com/api/filemanager/api/v3/files/thumbnail-redirect/200084581510?size=thumb&portalId=22317019&errorOnPlaceholder=true&t=1763475886595&hs_static_app=FileManagerDashboard&hs_static_app_version=static-1.37748",
     imageUrlDesktop:
       "https://www-krediya-com.sandbox.hs-sites.com/hs-fs/hubfs/Remesa_panama_nicaragua_Tabla_POPUP_horz.png?width=1920&name=Remesa_panama_nicaragua_Tabla_POPUP_horz.png",
     imageUrlMobile:
@@ -69,7 +69,7 @@ const locations: Location[] = [
       "https://www-krediya-com.sandbox.hs-sites.com/hs-fs/hubfs/Remesa_panama_R.DOM_Tabla_POPUP_horz.png?width=1920&name=Remesa_panama_R.DOM_Tabla_POPUP_horz.png",
     imageUrlMobile:
       "https://www-krediya-com.sandbox.hs-sites.com/hs-fs/hubfs/Remesa_panama_R.DOMI_Tabla_POPUP_VERT.png?width=1080&name=Remesa_panama_R.DOMI_Tabla_POPUP_VERT.png",
-    flag: "https://flagcdn.com/48x36/do.png",
+    flag: "//app.hubspot.com/api/filemanager/api/v3/files/thumbnail-redirect/200084424313?size=thumb&portalId=22317019&errorOnPlaceholder=true&t=1763475823360&hs_static_app=FileManagerDashboard&hs_static_app_version=static-1.37748",
   },
   {
     name: "Costa Rica",
@@ -77,7 +77,7 @@ const locations: Location[] = [
     coordinates: [-84.0907, 9.7489],
     description:
       "Economía estable con alto desarrollo en tecnología y servicios.",
-    flag: "https://flagcdn.com/48x36/cr.png",
+    flag: "//app.hubspot.com/api/filemanager/api/v3/files/thumbnail-redirect/200084600414?size=thumb&portalId=22317019&errorOnPlaceholder=true&t=1763475911832&hs_static_app=FileManagerDashboard&hs_static_app_version=static-1.37748",
     imageUrlDesktop:
       "https://www-krediya-com.sandbox.hs-sites.com/hs-fs/hubfs/Remesa_panama_costa%20rica_Tabla_POPUP_horz.png?width=1920&name=Remesa_panama_costa%20rica_Tabla_POPUP_horz.png",
     imageUrlMobile:
@@ -351,21 +351,21 @@ export default function InteractiveMaps({
             >
               {(selectedLocation.imageUrlDesktop ||
                 selectedLocation.imageUrlMobile) && (
-                <img
-                  src={
-                    isMobile
-                      ? selectedLocation.imageUrlMobile ||
+                  <img
+                    src={
+                      isMobile
+                        ? selectedLocation.imageUrlMobile ||
                         selectedLocation.imageUrlDesktop ||
                         "/placeholder.svg"
-                      : selectedLocation.imageUrlDesktop ||
+                        : selectedLocation.imageUrlDesktop ||
                         selectedLocation.imageUrlMobile ||
                         "/placeholder.svg"
-                  }
-                  alt={selectedLocation.name}
-                  id="modal-image_map-countries-svg"
-                  className="modal-image_map-countries-svg"
-                />
-              )}
+                    }
+                    alt={selectedLocation.name}
+                    id="modal-image_map-countries-svg"
+                    className="modal-image_map-countries-svg"
+                  />
+                )}
               {selectedLocation.link && (
                 <a
                   href={selectedLocation.link}

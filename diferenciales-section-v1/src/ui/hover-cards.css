@@ -21,6 +21,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 32px;
+  width: 100%;
 }
 
 .card-container_diferenciales_section {
@@ -30,6 +31,23 @@
   border-radius: 10px !important;
   box-shadow: 0 10px 20px rgba(0, 78, 188, 0.15) !important;
   overflow: hidden !important;
+  flex: 0 1 300px !important;
+}
+
+@media (max-width: 640px) {
+  .card-container_diferenciales_section {
+    width: 100% !important;
+    height: 260px !important;
+    max-width: 360px !important;
+    flex-basis: 100% !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .card-container_diferenciales_section {
+    height: 240px !important;
+    max-width: 320px !important;
+  }
 }
 
 .card_diferenciales_section {
@@ -85,6 +103,19 @@
 @media (min-width: 768px) {
   .front-content_diferenciales_section p {
     font-size: 30px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .front-content_diferenciales_section p {
+    font-size: 20px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .front-content_diferenciales_section p {
+    font-size: 18px !important;
+    padding: 0 12px !important;
   }
 }
 

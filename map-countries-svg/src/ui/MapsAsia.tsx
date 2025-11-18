@@ -29,7 +29,7 @@ const locations: Location[] = [
     coordinates: [104.1954, 35.8617],
     description:
       "Potencia económica global con rápida innovación en tecnología financiera.",
-    flag: "https://flagcdn.com/48x36/cn.png",
+    flag: "//app.hubspot.com/api/filemanager/api/v3/files/thumbnail-redirect/200084837918?size=thumb&portalId=22317019&errorOnPlaceholder=true&t=1763475856202&hs_static_app=FileManagerDashboard&hs_static_app_version=static-1.37748",
     imageUrlDesktop:
       "https://www-krediya-com.sandbox.hs-sites.com/hs-fs/hubfs/Remesa_panama_china_Tabla_POPUP_horz.png?width=1920&name=Remesa_panama_china_Tabla_POPUP_horz.png",
     imageUrlMobile:
@@ -309,21 +309,21 @@ export default function InteractiveMapsAsia({
             >
               {(selectedLocation.imageUrlDesktop ||
                 selectedLocation.imageUrlMobile) && (
-                <img
-                  src={
-                    isMobile
-                      ? selectedLocation.imageUrlMobile ||
+                  <img
+                    src={
+                      isMobile
+                        ? selectedLocation.imageUrlMobile ||
                         selectedLocation.imageUrlDesktop ||
                         "/placeholder.svg"
-                      : selectedLocation.imageUrlDesktop ||
+                        : selectedLocation.imageUrlDesktop ||
                         selectedLocation.imageUrlMobile ||
                         "/placeholder.svg"
-                  }
-                  alt={selectedLocation.name}
-                  id="modal-image_asia_map-countries-svg"
-                  className="modal-image_map-countries-svg"
-                />
-              )}
+                    }
+                    alt={selectedLocation.name}
+                    id="modal-image_asia_map-countries-svg"
+                    className="modal-image_map-countries-svg"
+                  />
+                )}
               {selectedLocation.link && (
                 <a
                   href={selectedLocation.link}
