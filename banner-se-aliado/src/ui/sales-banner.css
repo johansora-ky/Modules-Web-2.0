@@ -1,0 +1,201 @@
+/* Sales Banner Styles - Pure CSS with _banner_se_aliado suffix */
+
+/* Section container */
+#section_banner_se_aliado {
+    width: 100%;
+    background-color: white;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+    #section_banner_se_aliado {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+}
+
+/* Container */
+#container_banner_se_aliado {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+@media (min-width: 768px) {
+    #container_banner_se_aliado {
+        width: 70%;
+        max-width: 1152px;
+    }
+}
+
+/* Grid layout */
+#grid_banner_se_aliado {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+}
+
+/* Mobile: Animation first (order 1), Text second (order 2) */
+#carousel_container_banner_se_aliado {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+}
+
+#text_content_banner_se_aliado {
+    order: 2;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    #grid_banner_se_aliado {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 48px;
+        justify-items: stretch;
+    }
+
+    /* Desktop: Reset order to default (text first, animation second) */
+    #carousel_container_banner_se_aliado {
+        order: 2;
+    }
+
+    #text_content_banner_se_aliado {
+        order: 1;
+        text-align: left;
+    }
+}
+
+/* Text content container */
+#text_content_banner_se_aliado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#text_content_banner_se_aliado>*+* {
+    margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+    #text_content_banner_se_aliado {
+        align-items: flex-start;
+    }
+}
+
+/* Heading */
+#heading_banner_se_aliado {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #004EBC;
+    text-align: center;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    #heading_banner_se_aliado {
+        font-size: 48px;
+        text-align: left;
+    }
+}
+
+/* Paragraph */
+#paragraph_banner_se_aliado {
+    font-size: 18px;
+    line-height: 1.625;
+    color: #004EBC;
+    text-align: center;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    #paragraph_banner_se_aliado {
+        font-size: 20px;
+        text-align: left;
+    }
+}
+
+/* Button/Link */
+#button_banner_se_aliado {
+    display: inline-block;
+    width: fit-content;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: #004EBC;
+    transition: transform 0.2s ease-in-out;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+#button_banner_se_aliado:hover {
+    transform: scale(1.05);
+}
+
+#button_banner_se_aliado:active {
+    transform: scale(0.95);
+}
+
+/* Background shape wrapper */
+#shape_wrapper_banner_se_aliado {
+    position: relative;
+    width: 100%;
+    max-width: 384px;
+    min-width: 200px;
+    min-height: 200px;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+}
+
+/* Background shape */
+#background_shape_banner_se_aliado {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #004EBC 0%, rgba(0, 78, 188, 0.67) 100%);
+    border-radius: 50% 50% 50% 50% / 31% 31% 69% 69%;
+}
+
+/* Image container */
+#image_container_banner_se_aliado {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    overflow: hidden;
+    border-radius: 50% 50% 50% 50% / 31% 31% 69% 69%;
+}
+
+/* Image */
+.image_banner_se_aliado {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transition: opacity 1000ms ease-in-out !important;
+}

@@ -1,0 +1,142 @@
+.button_base_banner_remesas {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  white-space: nowrap !important;
+  border-radius: 8px !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 20px !important;
+  transition: background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-color: transparent !important;
+  cursor: pointer !important;
+  outline: none !important;
+  padding: 0 !important;
+  background-color: transparent !important;
+  color: var(--foreground) !important;
+}
+
+.button_base_banner_remesas:focus-visible {
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.25) !important;
+}
+
+.button_base_banner_remesas:disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+}
+
+.button_base_banner_remesas > svg {
+  width: 16px !important;
+  height: 16px !important;
+  flex-shrink: 0 !important;
+  pointer-events: none !important;
+}
+
+.button_variant_default_banner_remesas {
+  background-color: var(--primary) !important;
+  color: var(--primary-foreground) !important;
+}
+
+.button_variant_default_banner_remesas:hover {
+  background-color: color-mix(in oklch, var(--primary), black 10%) !important;
+}
+
+.button_variant_destructive_banner_remesas {
+  background-color: var(--destructive) !important;
+  color: var(--destructive-foreground) !important;
+}
+
+.button_variant_destructive_banner_remesas:hover {
+  background-color: color-mix(in oklch, var(--destructive), black 10%) !important;
+}
+
+.button_variant_outline_banner_remesas {
+  background-color: var(--background) !important;
+  color: var(--foreground) !important;
+  border-color: var(--border) !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08) !important;
+}
+
+.button_variant_outline_banner_remesas:hover {
+  background-color: var(--accent) !important;
+  color: var(--accent-foreground) !important;
+}
+
+.button_variant_secondary_banner_remesas {
+  background-color: var(--secondary) !important;
+  color: var(--secondary-foreground) !important;
+}
+
+.button_variant_secondary_banner_remesas:hover {
+  background-color: color-mix(in oklch, var(--secondary), black 8%) !important;
+}
+
+.button_variant_ghost_banner_remesas {
+  background-color: transparent !important;
+  color: var(--foreground) !important;
+}
+
+.button_variant_ghost_banner_remesas:hover {
+  background-color: var(--accent) !important;
+  color: var(--accent-foreground) !important;
+}
+
+.button_variant_link_banner_remesas {
+  background-color: transparent !important;
+  color: var(--primary) !important;
+  text-decoration: none !important;
+}
+
+.button_variant_link_banner_remesas:hover {
+  text-decoration: underline !important;
+}
+
+.button_size_default_banner_remesas {
+  min-height: 36px !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+.button_size_sm_banner_remesas {
+  min-height: 32px !important;
+  border-radius: 6px !important;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+  gap: 6px !important;
+}
+
+.button_size_lg_banner_remesas {
+  min-height: 40px !important;
+  border-radius: 10px !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+
+.button_size_icon_banner_remesas {
+  width: 36px !important;
+  height: 36px !important;
+  padding: 0 !important;
+}
+
+.button_size_icon_sm_banner_remesas {
+  width: 32px !important;
+  height: 32px !important;
+  padding: 0 !important;
+}
+
+.button_size_icon_lg_banner_remesas {
+  width: 40px !important;
+  height: 40px !important;
+  padding: 0 !important;
+}
+
+
+

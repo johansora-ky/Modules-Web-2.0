@@ -26,7 +26,7 @@ const cards: Card[] = [
   },
   {
     id: 3,
-    imageUrl: "/images/diferenciales/sin-interes-mora.jpg",
+    imageUrl: "https://www.krediya.com/hubfs/Im%C3%A1genes%20optimizadas%20en%20web%20-%20Nuevos%20sitios/Gemini_Generated_Image_tmqe3ntmqe3ntmqe.png?width=860&t=1763653109136",
     title: "Sin interés por mora",
     description: "Paga sin preocupaciones adicionales por retrasos. Somos flexibles y comprensivos con tu situación.",
   },
@@ -38,7 +38,7 @@ const cards: Card[] = [
   },
   {
     id: 5,
-    imageUrl: "/images/diferenciales/sin-score-crediticio.jpg",
+    imageUrl: "https://www.krediya.com/hubfs/Im%C3%A1genes%20optimizadas%20en%20web%20-%20Nuevos%20sitios/Score.png?width=860&t=1763653644781",
     title: "No necesitas score crediticio",
     description:
       "Acceso sin barreras de historial crediticio tradicional. Te evaluamos de manera justa y transparente.",

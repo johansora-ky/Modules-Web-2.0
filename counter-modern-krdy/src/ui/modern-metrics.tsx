@@ -1,9 +1,6 @@
 "use client"
 
-import type React from "react"
-
 import { useEffect, useRef, useState } from "react"
-import { Users, Globe, CreditCard, Store } from "lucide-react"
 
 interface Metric {
   id: string
@@ -11,7 +8,7 @@ interface Metric {
   prefix: string
   suffix: string
   label: string
-  icon: React.ReactNode
+  icon: string
   color: "blue" | "red"
   delay: number
 }
@@ -23,7 +20,7 @@ const metrics: Metric[] = [
     prefix: "",
     suffix: "",
     label: "Presencia en países",
-    icon: <Globe />,
+    icon: "https://www.krediya.com/hubfs/Iconos%203D/ICONO%2010%20300X300Px-1.png?width=860&t=1763656601127",
     color: "red",
     delay: 100,
   },
@@ -33,7 +30,7 @@ const metrics: Metric[] = [
     prefix: "+",
     suffix: "M",
     label: "Créditos desembolsados",
-    icon: <Users />,
+    icon: "https://www.krediya.com/hubfs/Iconos%203D/Mejor%20tarifario%20de%20env%C3%ADos%20300X300PX.png?width=860&t=1763654898351",
     color: "blue",
     delay: 0,
   },
@@ -43,7 +40,7 @@ const metrics: Metric[] = [
     prefix: "+",
     suffix: "K",
     label: "Aliados estratégicos",
-    icon: <CreditCard />,
+    icon: "https://www.krediya.com/hubfs/Iconos%203D/M%C3%A1s%20de%204000%20Aliados%20estrat%C3%A9gicos%20300X300PX%20MAG.png?width=860&t=1763654898264",
     color: "red",
     delay: 200,
   },
@@ -53,7 +50,7 @@ const metrics: Metric[] = [
     prefix: "+",
     suffix: "K",
     label: "Comercios aliados",
-    icon: <Store />,
+    icon: "https://www.krediya.com/hubfs/Iconos%203D/M%C3%A1s%20de%2010.000%20Comercios%20aliados%20300X300PX.png?width=860&t=1763654898193",
     color: "blue",
     delay: 300,
   },
@@ -161,7 +158,7 @@ export function ModernMetrics() {
 
               <div id="card_inner_counter_modern_krdy">
                 <div className="metric_icon_wrap_counter_modern_krdy">
-                  {metric.icon}
+                  <img src={metric.icon} alt={metric.label} />
                 </div>
 
                 <div className={`metric_value_counter_modern_krdy metric_${metric.color}_counter_modern_krdy`}>

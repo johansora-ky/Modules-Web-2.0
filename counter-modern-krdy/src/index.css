@@ -250,26 +250,26 @@
   align-items: center !important;
   justify-content: center !important;
   border-radius: 1rem !important;
-  padding: 1rem !important;
   transition: transform 500ms ease !important;
+  background: rgba(255, 255, 255, 0.1) !important;
 }
 
 .metric_card_counter_modern_krdy:hover .metric_icon_wrap_counter_modern_krdy {
   transform: scale(1.1) !important;
 }
 
-.metric_icon_wrap_counter_modern_krdy svg {
-  width: 2rem !important;
-  height: 2rem !important;
+.metric_icon_wrap_counter_modern_krdy img {
+  width: 60px !important;
+  height: 60px !important;
 }
 
 .metric_blue_counter_modern_krdy .metric_icon_wrap_counter_modern_krdy {
-  background: rgba(0, 78, 188, 0.10) !important;
+  background: rgba(0, 78, 188, 0.10);
   color: #004ebc !important;
 }
 
 .metric_red_counter_modern_krdy .metric_icon_wrap_counter_modern_krdy {
-  background: rgba(230, 0, 38, 0.10) !important;
+  background: rgba(230, 0, 38, 0.10);
   color: #e60026 !important;
 }
 
