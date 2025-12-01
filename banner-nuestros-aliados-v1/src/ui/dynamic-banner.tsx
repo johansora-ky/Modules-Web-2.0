@@ -17,7 +17,7 @@ export function DynamicBanner() {
     <div id="dynamic-banner-container_nuestros_aliados">
       {/* Watermark Logo Background */}
       <div id="dynamic-banner-watermark_nuestros_aliados">
-        <div id="dynamic-banner-watermark-text_nuestros_aliados">YA</div>
+        <img src="https://www.krediya.com/hubfs/Im%C3%A1genes%20optimizadas%20en%20web%20-%20Nuevos%20sitios/YA_logo.png?width=860&t=1764103360764" alt="Watermark" width={500} height={500} />
       </div>
 
       {/* Radial Glow Effect */}
@@ -42,9 +42,12 @@ export function DynamicBanner() {
             <h2 id="dynamic-banner-h2_nuestros_aliados">
               Lo financiamos al instante
             </h2>
-            <button id="dynamic-banner-button_nuestros_aliados">
-              Comenzar
-            </button>
+            <a href="#hs_cos_wrapper_module_17628858871907">
+              <button id="dynamic-banner-button_nuestros_aliados">
+                Comenzar
+              </button>
+            </a>
+
           </div>
 
           {/* Right Section - Product Carousel */}

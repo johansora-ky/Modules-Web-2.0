@@ -1,4 +1,6 @@
 import "./App.css";
+import { BlackFridayBadge } from "./components/ui/black-friday-badge";
+import { FeatureItem } from "./components/ui/feature-item";
 
 function App() {
   const calculatorUrl =
@@ -10,13 +12,24 @@ function App() {
         <div id="banner-kredicash-grid">
           {/* Left Section - Blue Panel with Text */}
           <div id="banner-kredicash-text-panel">
+            <BlackFridayBadge />
             <h1 id="banner-kredicash-headline">
-              Conoce todo sobre tu crédito online
+              Obtén <span className="gradient-text">hasta $500</span>
             </h1>
-            <div id="banner-kredicash-offer">Hasta $500 USD</div>
             <p id="banner-kredicash-slogan">
-              Resuelve hoy todos los imprevistos
+              para estrenar lo que necesitas en este <br /> <span id="banner-kredicash-headline"><span className="gradient-text">Black Friday</span></span>
             </p>
+            <div id="banner-kredicash-features">
+              <FeatureItem
+                title="Aprobación instantánea"
+              />
+              <FeatureItem
+                title="Flexible"
+              />
+              <FeatureItem
+                title="Seguro"
+              />
+            </div>
           </div>
 
           {/* Right Section - Calculator Iframe */}

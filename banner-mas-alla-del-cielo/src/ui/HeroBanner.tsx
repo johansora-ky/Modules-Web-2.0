@@ -281,9 +281,11 @@ export function HeroBanner() {
 
             {/* CTA Button */}
             <div id="hero-banner-cta-container_mas_alla_del_cielo">
-              <button id="hero-banner-cta-button_mas_alla_del_cielo">
-                Haz clic y conoce más
-              </button>
+              <a href="https://www.krediya.com/mas-alla-del-cielo" target="_blank">
+                <button id="hero-banner-cta-button_mas_alla_del_cielo">
+                  Haz clic y conoce más
+                </button>
+              </a>
             </div>
 
             {/* Footer disclaimer */}

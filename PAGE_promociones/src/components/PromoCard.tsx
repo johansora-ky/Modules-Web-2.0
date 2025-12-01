@@ -22,7 +22,7 @@ export const PromoCard = ({ card, onClick }: PromoCardProps) => {
       <div className="card_content_page_promociones">
         <div className="card_text_container_page_promociones">
           <h3 className="card_title_page_promociones">
-            {card.titulo}
+            {card.text_field}
           </h3>
           <p className="card_description_page_promociones">
             {card.descripcion_simple}
@@ -44,7 +44,7 @@ export const PromoCard = ({ card, onClick }: PromoCardProps) => {
               }}
               className="button_page_promociones button_primary_page_promociones button_sm_page_promociones"
             >
-              Ir YA
+              Ir a la landing
             </button>
           )}
         </div>

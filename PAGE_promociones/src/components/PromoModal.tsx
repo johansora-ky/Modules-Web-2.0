@@ -113,7 +113,9 @@ export const PromoModal = ({ card, open, onOpenChange }: PromoModalProps) => {
                                 <h4 className="modal_section_title_page_promociones">
                                     Descripción
                                 </h4>
-                                <span className="modal_section_text_page_promociones" dangerouslySetInnerHTML={{ __html: card.pop_up_info.descripcion_completa }} />
+                                <p className="modal_section_text_page_promociones">
+                                    {card.pop_up_info.descripcion_completa}
+                                </p>
                             </div>
 
                             {/* Terms and Conditions */}
@@ -121,7 +123,9 @@ export const PromoModal = ({ card, open, onOpenChange }: PromoModalProps) => {
                                 <h4 className="modal_section_title_page_promociones">
                                     Términos y Condiciones
                                 </h4>
-                                <span className="modal_terms_text_page_promociones" dangerouslySetInnerHTML={{ __html: card.pop_up_info.t_c }} />
+                                <p className="modal_terms_text_page_promociones">
+                                    {card.pop_up_info.t_c}
+                                </p>
                             </div>
 
                             {/* CTA Button */}
@@ -135,7 +139,7 @@ export const PromoModal = ({ card, open, onOpenChange }: PromoModalProps) => {
                                         }}
                                         className="button_page_promociones button_primary_page_promociones button_full_page_promociones"
                                     >
-                                        Ir YA
+                                        Ir a la landing
                                     </button>
                                 ) : (
                                     <button

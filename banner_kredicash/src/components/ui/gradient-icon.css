@@ -1,0 +1,42 @@
+@keyframes subtle-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+.gradient-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #14A3FF 0%, #00D4AA 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  animation: subtle-pulse 3s ease-in-out infinite;
+}
+
+.gradient-icon-inner {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+}
+
+@media (min-width: 768px) {
+  .gradient-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .gradient-icon-inner {
+    width: 48px;
+    height: 48px;
+  }
+}
+

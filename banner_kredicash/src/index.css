@@ -1,0 +1,12 @@
+#banner-kredicash-black-friday {
+    font-size: 35px;
+    font-weight: 700;
+    background: linear-gradient(0deg, #000000 0%, #424242 100%);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 16px;
+    margin: 0;
+    line-height: 1.5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    opacity: 0.95;
+}

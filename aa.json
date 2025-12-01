@@ -1,0 +1,214 @@
+const productsList = [
+  {
+    product_name: "Reloj Xiaomi Watch S3 Silver",
+    label_text: "1298",
+    product_image: {
+      src: "https://www.krediya.com/hubfs/reloj-inteligente-xiaomi-redmi-watch-3-active-negro-_46_3_TECNOLOGIA.webp",
+      alt: "Reloj Xiaomi Watch S3 Silver",
+    },
+  },
+  {
+    product_name: "Reloj Inteligente Xiaomi Redmi Watch 3 Active Negro",
+    label_text: "429",
+    product_image: {
+      src: "https://www.krediya.com/hubfs/reloj-xiaomi-watch-s3-silver-silver-191257_5_TECNOLOGIA.webp",
+      alt: "Reloj Inteligente Xiaomi Redmi Watch 3 Active Negro",
+    },
+  },
+  {
+    product_name: "Laptop HP 15-fc0276la Ryzen 7 (B9TR4LA)",
+    label_text: "5599",
+    product_image: {
+      src: "https://www.krediya.com/hubfs/laptop-hp-15-fc0276la-ryzen-7-b9tr4la-plateado-197246_6_TECNOLOGIA.webp",
+      alt: "Laptop HP 15-fc0276la Ryzen 7 (B9TR4LA)",
+    },
+  },
+  {
+    product_name: "Laptop HP 15-fc0230la Ryzen 3 (B9TN5LA)",
+    label_text: "3649",
+    product_image: {
+      src: "https://www.krediya.com/hubfs/laptop-hp-15-fc0230la-ryzen-3-b9tn5la-azul-claro-plata-natural-197240_7_TECNOLOGIA.webp",
+      alt: "Laptop HP 15-fc0230la Ryzen 3 (B9TN5LA)",
+    },
+  },
+  {
+    product_name:
+      "Televisor Smart Full HD Samsung 40 pulgadas UN40F6000FPXPA",
+    label_text: "1598",
+    product_image: {
+      src: "https://www.krediya.com/hubfs/pantalla-smart-full-hd-samsung-40-un40f6000fpx-197407_2_TECNOLOGIA.webp",
+      alt: "Televisor Smart Full HD Samsung 40 pulgadas UN40F6000FPXPA",
+    },
+  },
+  {
+    product_name:
+      "Televisor Smart UHD 4K RCA ROKU 65 pulgadas RC65RK | Wi-Fi",
+    label_text: "3998",
+    product_image: {
+      src: "https://www.krediya.com/hubfs/televisor-smart-uhd-4k-rca-roku-65-rc65rk-wi-183913_3_1_TECNOLOGIA.webp",
+      alt: "Televisor Smart UHD 4K RCA ROKU 65 pulgadas RC65RK | Wi-Fi",
+    },
+  },
+  {
+    product_name: "Centro de Entretenimiento Madersi LUXLITE",
+    label_text: "3899",
+    product_image: {
+      src: "https://www.krediya.com/hubfs/167451_1gt_TENCOLOGIA.webp",
+      alt: "Centro de Entretenimiento Madersi LUXLITE",
+    },
+  },
+  {
+    product_name: "Estufa de gas Mabe 20 Pulgadas EMA5105SN1 4 Quemadores",
+    label_text: "1499",
+    product_image: {
+      src: "https://www.krediya.com/hubfs/estufa-de-gas-mabe-20-pulgadas-ema5105sn1-4-quemadores-negro-196185_6_LB.webp",
+      alt: "Estufa de gas Mabe 20 Pulgadas EMA5105SN1 4 Quemadores",
+    },
+  },
+  {
+    product_name: "Estufa de gas Mabe 30 pulgadas EM7622BAPS2 6 Quemadores",
+    label_text: "2398",
+    product_image: {
+      src: "https://www.krediya.com/hubfs/estufa-de-gas--mabe-30-pulgadas-em7622baps2-6-quemadores-188157_7_LB.webp",
+      alt: "Estufa de gas Mabe 30 pulgadas EM7622BAPS2 6 Quemadores",
+    },
+  },
+  {
+    product_name: "Refrigeradora SemiautomÃ¡tica Frigidaire 5CP FRTM13G3HPS",
+    label_text: "1898",
+    product_image: {
+      src: "https://www.krediya.com/hubfs/refrigeradora-semiautomatica-frigidaire-5cp-frtm13g3hps-151625-1-frontal_LB.webp",
+      alt: "Refrigeradora SemiautomÃ¡tica Frigidaire 5CP FRTM13G3HPS",
+    },
+  },
+  {
+    product_name:
+      "Refrigeradora AutomÃ¡tica Mabe 19CP RMS510IAMRX0 Dispensador",
+    label_text: "4999",
+    product_image: {
+      src: "https://www.krediya.com/hubfs/162071_1_LB.webp",
+      alt: "Refrigeradora AutomÃ¡tica Mabe 19CP RMS510IAMRX0 Dispensador",
+    },
+  },
+  {
+    product_name: "Lavadora AutomÃ¡tica LG 19KG WT19WVTM",
+    label_text: "3798",
+    product_image: {
+      src: "https://www.krediya.com/hubfs/lavadora-automatica-lg-19kg-wt19wvtm-blanco-191007_3_LB.webp",
+      alt: "Lavadora AutomÃ¡tica LG 19KG WT19WVTM",
+    },
+  },
+  {
+    product_name: "Lavadora AutomÃ¡tica Whirlpool 22KG 8MWTW2224WJM",
+    label_text: "3499",
+    product_image: {
+      src: "https://www.krediya.com/hubfs/165223_1_LB.webp",
+      alt: "Lavadora AutomÃ¡tica Whirlpool 22KG 8MWTW2224WJM",
+    },
+  },
+  {
+    product_name: "Freidora de Aire Power XL 7.8 Litros AFE8001LA",
+    label_text: "799",
+    product_image: {
+      src: "https://www.krediya.com/hubfs/freidora-de-powe-xl-7-8-litros-afe8001la-198539_1_.webp",
+      alt: "Freidora de Aire Power XL 7.8 Litros AFE8001LA",
+    },
+  },
+  {
+    product_name: "Licuadora Oster 1.5 Litros BLSTBPST013",
+    label_text: "1298",
+    product_image: {
+      src: "https://www.krediya.com/hubfs/licuadora-oster-blstbpst013-negro-173329_2_.webp",
+      alt: "Licuadora Oster 1.5 Litros BLSTBPST013",
+    },
+  },
+  {
+    product_name: "Licuadora Black & Decker 1.5 litros BL1650",
+    label_text: "699",
+    product_image: {
+      src: "https://www.krediya.com/hubfs/154128_1_5eef8hnjzwnx7qiz.webp",
+      alt: "Licuadora Black & Decker 1.5 litros BL1650",
+    },
+  },
+  {
+    product_name: "Batidora de InmersiÃ³n Black & Decker HB2800BC",
+    label_text: "399",
+    product_image: {
+      src: "https://www.krediya.com/hubfs/batidora-de-inmersion-black-_-decker-hb2800bc-negro-172884-1-frontal.webp",
+      alt: "Batidora de InmersiÃ³n Black & Decker HB2800BC",
+    },
+  },
+  {
+    product_name: "Plancha de Vapor Oster GCSTBS5001-013",
+    label_text: "249",
+    product_image: {
+      src: "https://www.krediya.com/hubfs/plancha-de-vapor-oster-gcstbs5001-013-azul-172149-1-lateral-izquierda.webp",
+      alt: "Plancha de Vapor Oster GCSTBS5001-013",
+    },
+  },
+  {
+    product_name: "Olla arrocera Black & Decker 20 tazas RC5200",
+    label_text: "348",
+    product_image: {
+      src: "https://www.krediya.com/hubfs/151313_1_9xntlzj6o8bzqwlj.webp",
+      alt: "Olla arrocera Black & Decker 20 tazas RC5200",
+    },
+  },
+  {
+    product_name: "Olla arrocera Black & Decker 14 tazas RC514R",
+    label_text: "298",
+    product_image: {
+      src: "https://www.krediya.com/hubfs/olla-arrocera-black-decker-20-tazas-rc5200-148351-1-frontal_1.webp",
+      alt: "Olla arrocera Black & Decker 14 tazas RC514R",
+    },
+  },
+  {
+    product_name: "Juego de Ollas Telstar 10 piezas TSO010220ZH",
+    label_text: "648",
+    product_image: {
+      src: "https://www.krediya.com/hubfs/freidora-de-powe-xl-7-8-litros-afe8001la-198539_1_.webp",
+      alt: "Juego de Ollas Telstar 10 piezas TSO010220ZH",
+    },
+  },
+  {
+    product_name: "Sartenes Telstar 3 piezas TJS003210NH",
+    label_text: "188",
+    product_image: {
+      src: "https://www.krediya.com/hubfs/155467_1.webp",
+      alt: "Sartenes Telstar 3 piezas TJS003210NH",
+    },
+  },
+  {
+    product_name: "Sandwichera Black & Decker PAN24535",
+    label_text: "298",
+    product_image: {
+      src: "https://www.krediya.com/hubfs/157747_1_sblbgsztxrgpjowb.webp",
+      alt: "Sandwichera Black & Decker PAN24535",
+    },
+  },
+  {
+    product_name: "Cepillo de Aire Remington Wet2Style AS15AB",
+    label_text: "348",
+    product_image: {
+      src: "https://www.krediya.com/hubfs/cepillo-de-aire-remington-wet2style-as15ab-rosado-173749-1-diagonal.webp",
+      alt: "Cepillo de Aire Remington Wet2Style AS15AB",
+    },
+  },
+  {
+    product_name: "Combo Alisador y Secadora de cabello Remington S12A-D13A",
+    label_text: "348",
+    product_image: {
+      src: "https://www.krediya.com/hubfs/combo-alisador-y-secadora-de-cabello-remington-s12a-d13a-negro-silver-173751-1-empaque.webp",
+      alt: "Combo Alisador y Secadora de cabello Remington S12A-D13A",
+    },
+  },
+  {
+    product_name:
+      "Combo Afeitadora con Cortadora de Barba Remington PR1335-MB06A-F",
+    label_text: "348",
+    product_image: {
+      src: "https://www.krediya.com/hubfs/combo-afeitadora-con-cortadora-de-barba-remington-pr1335-mb06a-f-negro-azul-173752-1-empaque.webp",
+      alt: "Combo Afeitadora con Cortadora de Barba Remington PR1335-MB06A-F",
+    },
+  },
+];

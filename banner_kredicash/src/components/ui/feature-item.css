@@ -1,0 +1,54 @@
+.feature-item {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    margin-bottom: 24px !important;
+    width: min-content !important;
+}
+
+.feature-item:last-child {
+    margin-bottom: 0 !important;
+}
+
+.feature-item-content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100% !important;
+}
+
+.feature-item-title {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: white !important;
+    margin: 0 !important;
+    line-height: 1.3 !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.feature-item-description {
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    color: #a0a0a0 !important;
+    margin: 0 !important;
+    line-height: 1.5 !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+@media (min-width: 768px) {
+    .feature-item {
+        gap: 20px !important;
+        margin-bottom: 32px !important;
+        width: 40% !important;
+    }
+
+    .feature-item-title {
+        font-size: 20px !important;
+    }
+
+    .feature-item-description {
+        font-size: 16px !important;
+    }
+}

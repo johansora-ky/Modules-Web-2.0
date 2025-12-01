@@ -1,10 +1,16 @@
 /* Banner KrediCash Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 /* Section container */
 #banner-kredicash-section {
     width: 100%;
     padding: 0;
     margin: 0;
+    background-color: #000000;
 }
 
 /* Main container */
@@ -13,6 +19,9 @@
     width: 100%;
     max-width: 100%;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Grid layout */
@@ -22,7 +31,6 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    height: 107dvh;
 }
 
 /* Mobile: Text panel first, iframe second */
@@ -36,14 +44,24 @@
     text-align: center;
     border-radius: 0 0 0 0;
     width: 100%;
+    background-color: #000000;
 }
 
 #banner-kredicash-iframe-container {
     order: 2;
     width: 100%;
     height: 100%;
-    overflow: hidden;
     display: flex;
+}
+
+@media (min-width: 768px) {
+    #banner-kredicash-iframe-container {
+        order: 2;
+        width: 90%;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+    }
 }
 
 /* Desktop: Side by side layout */
@@ -52,6 +70,7 @@
         flex-direction: row;
         align-items: stretch;
         height: 71dvh !important;
+        max-width: 1280px !important;
     }
 
     #banner-kredicash-text-panel {
@@ -60,12 +79,12 @@
         text-align: left;
         align-items: flex-start;
         border-radius: 0 24px 24px 0;
+        background-color: #000000;
     }
 
     #banner-kredicash-iframe-container {
         order: 2;
         border-radius: 0;
-        width: 85%;
     }
 }
 
@@ -73,14 +92,18 @@
 #banner-kredicash-headline {
     font-size: 32px;
     font-weight: 700;
-    background: linear-gradient(180deg, #14A3FF 0%, #0082FF 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: white;
     margin: 0;
     margin-bottom: 24px;
     line-height: 1.2;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.gradient-text {
+    background: linear-gradient(180deg, #14A3FF 0%, #00D4AA 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 #banner-kredicash-offer {
@@ -100,21 +123,31 @@
 #banner-kredicash-slogan {
     font-size: 20px;
     font-weight: 400;
-    background: linear-gradient(180deg, #14A3FF 0%, #0082FF 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: white;
     margin: 0;
+    margin-bottom: 32px;
     line-height: 1.5;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    opacity: 0.95;
+}
+
+#banner-kredicash-features {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 8px;
+    flex-flow: wrap;
+    justify-content: center;
+    gap: 16px;
 }
 
 /* Desktop text sizes */
 @media (min-width: 768px) {
+    #banner-kredicash-features {
+        justify-content: flex-start;
+    }
+
     #banner-kredicash-headline {
         font-size: 40px;
-        margin-bottom: 32px;
     }
 
     #banner-kredicash-offer {
@@ -124,6 +157,7 @@
 
     #banner-kredicash-slogan {
         font-size: 24px;
+        margin-bottom: 40px;
     }
 }
 
@@ -138,17 +172,18 @@
 
     #banner-kredicash-slogan {
         font-size: 28px;
+        margin-bottom: 48px;
     }
 }
 
 /* Iframe Container */
 #banner-kredicash-calculator {
-    width: 100%;
-    height: 100%;
     border: 0;
     display: block;
-    background-color: #ffffff;
     flex: 1;
+    margin-bottom: -20%;
+    min-height: 100dvh;
+    width: 100%;
 }
 
 /* Ensure smooth transitions */
